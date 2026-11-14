@@ -1,0 +1,5 @@
+/* src/assets/main.css —— 主入口样式（index 页）。
+   Tailwind 4 经 @tailwindcss/vite 插件接线：@import 后按需生成原子类。
+   全站视觉直接使用原子类（D02 §5 定稿，无额外全局 token）；
+   privacy/terms 子页样式独立走 legal.css（source 限定，两 CSS 入口互不携带对方工具类）。 */
+@import "tailwindcss";

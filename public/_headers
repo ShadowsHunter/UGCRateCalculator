@@ -1,0 +1,19 @@
+# public/_headers —— Cloudflare Pages（构建时拷入 dist 根）
+
+
+# html 与根路径：每次回源校验（费率/文案热修即生效）
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# 安全 headers（全站；末条 /* 规则的附加头，CF Pages 会合并匹配规则）
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains
+# hashed 静态资源（Vite 默认 assets/ 目录，文件名含 hash）：一年 immutable。
+# 注：CF Pages 对同名 header（此处 Cache-Control）由后匹配的规则覆盖，故 immutable
+#     规则必须置于上述两条 /* 规则之后（文件末尾），否则会被 max-age=0 覆盖而失效。
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

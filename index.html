@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ===== 基本 SEO ===== -->
+    <title>UGC Rate Calculator 2026 — What Should You Charge Per Video?</title>
+    <meta name="description" content="Free UGC rate calculator for 2026. Get an instant per-video price range based on content type, usage rights, and experience — no follower count required. Based on community pricing data." />
+    <link rel="canonical" href="https://example.com/" />
+
+    <!-- emoji favicon（SVG data-URI，零请求；emoji 可由 02 号视觉规范替换） -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧮</text></svg>" />
+
+    <!-- ===== Open Graph ===== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="UGC Toolkit" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:title" content="UGC Rate Calculator 2026 — What Should You Charge Per Video?" />
+    <meta property="og:description" content="Free UGC rate calculator. Instant per-video price range by content type, usage rights, and experience — no follower count required." />
+    <meta property="og:image" content="https://example.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="UGC Rate Calculator — free per-video pricing tool" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- ===== Twitter Card ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="UGC Rate Calculator 2026 — What Should You Charge Per Video?" />
+    <meta name="twitter:description" content="Free UGC rate calculator. Instant per-video price range by content type, usage rights, and experience." />
+    <meta name="twitter:image" content="https://example.com/og-image.png" />
+
+    <!-- ===== JSON-LD：WebApplication（price 0，spec §6） ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "UGC Rate Calculator",
+      "url": "https://example.com/",
+      "description": "Free UGC rate calculator. Instant per-video price range by content type, usage rights, and experience — no follower count required.",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "datePublished": "2026-11-14",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "featureList": [
+        "Per-video UGC rate estimate by experience level",
+        "Usage rights and whitelisting pricing model",
+        "Monthly income projection at your volume",
+        "Influencer posting add-on by follower tier"
+      ]
+    }
+    </script>
+
+    <!-- ===== GA4（单标签，spec §10；上线时替换 G-XXXXXXXXXX；dev 环境不注入亦可） ===== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- 其余 head 项由 Vite 构建注入（main.css / hashed assets） -->
+  </head>
+  <body>
+    <div id="app"></div>
+    <noscript>
+      <p style="max-width: 40rem; margin: 3rem auto; padding: 0 1rem; font-family: system-ui, sans-serif; font-size: 0.875rem; line-height: 1.5; color: #334155; text-align: center;">
+        This UGC rate calculator requires JavaScript. Please enable JavaScript to see your estimated per-video rate.
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

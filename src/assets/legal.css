@@ -1,0 +1,7 @@
+/* src/assets/legal.css —— 合规子页（privacy/terms）样式。
+   两页为纯 HTML+CSS 无 JS；Tailwind 4 显式限定 source 为两个 legal html
+   （source(none) 关闭自动扫描 + @source 逐个指认），防止与主入口 main.css
+   互带对方页面的工具类——两个 CSS 入口各自独立生成。 */
+@import "tailwindcss" source(none);
+@source "../../privacy.html";
+@source "../../terms.html";
