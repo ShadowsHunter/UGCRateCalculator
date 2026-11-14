@@ -1,0 +1,6 @@
+# 统一 LF 行尾：部署目标为 Linux（Cloudflare Pages），Windows 工作区不做 CRLF 转换。
+# 修复 core.autocrlf=true 下"工作区 LF 文件被 git status 误报 modified"的假阳性。
+* text=auto eol=lf
+
+# 二进制资产
+*.png binary
