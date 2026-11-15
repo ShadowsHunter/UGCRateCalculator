@@ -160,8 +160,8 @@ export const CTA_SECONDARY =
   'Everything for your next pitch: DM templates · rate cards · negotiation scripts. Instant download.'
 /** social proof 仅单价锚点，禁伪造销量（D02 §4.6 红线） */
 export const CTA_SOCIAL_PROOF = '20+ templates for $9 — less than $0.50 each.'
-/** gumroad 外链占位（plan 2.3.3 占位替换清单：上线前替换真实 $9 模板包链接） */
-export const GUMROAD_URL = 'https://gumroad.com/l/ugc-pitch-pack'
+/** gumroad 外链：当前指向店铺主页（plan 2.3.3）；M2 $9 模板包上架时换为产品链接 */
+export const GUMROAD_URL = 'https://ugctoolkit.gumroad.com'
 
 /* ---------- 钩子框（amber，D02 §4.8；要点 1 口径 = errata #15 / plan 2.3-D3） ---------- */
 
