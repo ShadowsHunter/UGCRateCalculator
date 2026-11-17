@@ -12,6 +12,8 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         privacy: resolve(__dirname, 'privacy.html'),
         terms: resolve(__dirname, 'terms.html'),
+        // 404.html 是 CF Pages 约定的 404 fallback，经构建产出 dist/404.html
+        notFound: resolve(__dirname, '404.html'),
       },
     },
   },
