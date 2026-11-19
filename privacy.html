@@ -11,9 +11,18 @@
     <!-- 同款 emoji favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧮</text></svg>" />
     <link rel="stylesheet" href="/src/assets/legal.css" />
+
+    <!-- ===== GA4（单标签，spec §10） ===== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-52NE0FELYX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-52NE0FELYX');
+    </script>
   </head>
   <body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
-    <!-- 纯 HTML+CSS，无 JS（spec §5 / D01 §6.2）。正文要素按 doc/design/03-变现收款与合规设计.md §3.3 -->
+    <!-- 纯 HTML+CSS，无业务 JS；仅 GA4 统计脚本（spec §5 / D01 §6.2）。正文要素按 doc/design/03-变现收款与合规设计.md §3.3 -->
     <header class="border-b border-slate-200 bg-white">
       <div class="mx-auto flex max-w-3xl items-center justify-between px-4 py-4">
         <span class="text-lg font-bold">UGC Toolkit</span>
