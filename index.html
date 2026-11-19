@@ -54,13 +54,31 @@
     }
     </script>
 
-    <!-- ===== GA4（单标签，spec §10） ===== -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-52NE0FELYX"></script>
+    <!-- ===== GA4 延迟加载（spec §10 + perf：TBT 优化） =====
+         dataLayer/gtag 队列同步直出（延迟前的 gtag() 调用进队列不丢失）；
+         外部 gtag.js 改为首次交互（pointerdown/keydown/wheel）或 5s 兜底后注入，幂等只加载一次 -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-52NE0FELYX');
+      (function () {
+        var EVENTS = ['pointerdown', 'keydown', 'wheel'];
+        var done = false;
+        var timer = 0;
+        function loadGA4() {
+          if (done) return;
+          done = true;
+          clearTimeout(timer);
+          EVENTS.forEach(function (n) { removeEventListener(n, loadGA4); });
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-52NE0FELYX';
+          document.head.appendChild(s);
+          gtag('js', new Date());
+          gtag('config', 'G-52NE0FELYX');
+        }
+        timer = setTimeout(loadGA4, 5000);
+        EVENTS.forEach(function (n) { addEventListener(n, loadGA4, { once: true, passive: true }); });
+      })();
     </script>
 
     <!-- 其余 head 项由 Vite 构建注入（main.css / hashed assets） -->
