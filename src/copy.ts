@@ -157,11 +157,12 @@ export const BONUS_REF_NOTE = '(the deal ladder viral.app recommends)'
 export const CTA_HEADLINE = 'You know your rate — now land the deal.'
 export const CTA_BUTTON = 'Land the deal — $9 Pitch Pack'
 export const CTA_SECONDARY =
-  'Everything for your next pitch: DM templates · rate cards · negotiation scripts. Instant download.'
+  'Everything for your next pitch: cold pitch emails · a rate card · negotiation scripts. Instant download.'
 /** social proof 仅单价锚点，禁伪造销量（D02 §4.6 红线） */
-export const CTA_SOCIAL_PROOF = '20+ templates for $9 — less than $0.50 each.'
-/** gumroad 外链：当前指向店铺主页（plan 2.3.3）；M2 $9 模板包上架时换为产品链接 */
-export const GUMROAD_URL = 'https://ugctoolkit.gumroad.com'
+export const CTA_SOCIAL_PROOF =
+  '13 pitch, follow-up & negotiation templates + a data-backed rate card — $9.'
+/** gumroad 外链：$9 Pitch Template Pack 产品直达链接（jlfmgx，2026-11-20 上架，替换原店铺主页） */
+export const GUMROAD_URL = 'https://ugctoolkit.gumroad.com/l/jlfmgx'
 
 /* ---------- 钩子框（amber，D02 §4.8；要点 1 口径 = errata #15 / plan 2.3-D3） ---------- */
 
