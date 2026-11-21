@@ -285,6 +285,50 @@ if (!existsSync(indexFile)) {
   }
 }
 
+// —— 断言 8：content CSS 覆盖检查（防 @source 路径错误产出空壳 CSS · 2026-11-21 线上裸奔事故补丁）——
+// 事故：content.css 的 @source 写成 ../blog/（一层），Tailwind 静默扫空，产物仅 4.2KB 纯 theme 层，
+// 4 页全部无样式上线；此前断言只查 CSS 文件存在（200），未查内容覆盖。本断言双保险：
+//   a) 体积下限 >6000B（空壳 ≈4.2KB，正常 ≥9KB）；b) 4 页 body class 每个 token 在 CSS 中有规则。
+console.log('[content css]')
+{
+  const cssHrefs = new Set()
+  for (const page of PAGES) {
+    const file = join(DIST, 'blog', `${page.slug}.html`)
+    if (!existsSync(file)) continue
+    const html = readFileSync(file, 'utf8')
+    for (const m of html.matchAll(/<link\b[^>]*rel="stylesheet"[^>]*>/gi)) {
+      const href = /href\s*=\s*"([^"]*)"/i.exec(m[0])?.[1] ?? ''
+      if (href.startsWith('/assets/')) cssHrefs.add(href)
+    }
+  }
+  if (cssHrefs.size === 0) {
+    fail('content css', 'blog 页引用 /assets/ CSS', '4 页均未发现 stylesheet 引用')
+  } else {
+    const cssPath = join(DIST, [...cssHrefs][0].replace(/^\//, ''))
+    if (!existsSync(cssPath)) {
+      fail('content css', 'CSS 产物存在', cssPath)
+    } else {
+      const css = readFileSync(cssPath, 'utf8')
+      ok('content css', `CSS 产物存在（${cssHrefs.size} 个引用 → ${cssPath.split(/[\\/]/).pop()} ${(css.length / 1024).toFixed(2)} KB）`)
+      if (css.length > 6000) ok('content css', `体积 ${css.length}B > 6000B（非空壳）`)
+      else fail('content css', '体积非空壳（>6000B）', `实际 ${css.length}B —— 疑似 @source 未扫描到页面，检查 src/assets/content.css 的 @source 路径（须为 ../../blog/，参照 legal.css 先例两层）`)
+      const bodyTokens = new Set()
+      for (const page of PAGES) {
+        const file = join(DIST, 'blog', `${page.slug}.html`)
+        if (!existsSync(file)) continue
+        const html = readFileSync(file, 'utf8')
+        const bodyClass = /<body\b[^>]*class\s*=\s*"([^"]*)"/i.exec(html)?.[1] ?? ''
+        bodyClass.split(/\s+/).filter(Boolean).forEach((t) => bodyTokens.add(t))
+      }
+      const missing = [...bodyTokens].filter(
+        (t) => !new RegExp(`\\.${t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*[{,]`).test(css),
+      )
+      if (missing.length === 0) ok('content css', `body class 全覆盖（${bodyTokens.size} 个 utility 均有规则）`)
+      else fail('content css', 'body class 全覆盖', `缺失规则: ${missing.join(', ')} —— @source 可能未扫描到页面 HTML`)
+    }
+  }
+}
+
 // —— 汇总：失败 → 清单 + exit 1 ——
 console.log('——')
 if (failures.length > 0) {
