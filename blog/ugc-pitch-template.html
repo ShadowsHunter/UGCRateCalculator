@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UGC Pitch Template: Email Brands and Get Responses | UGC Toolkit</title>
+    <meta name="description" content="Copy this UGC pitch template: two full cold email examples, a day-by-day follow-up cadence, and 2026 rate anchors ($75–250 to start)." />
+    <meta name="robots" content="index, follow" />
+    <!-- 自指 canonical 用 clean URL：Cloudflare Pages 将 /blog/ugc-pitch-template.html 301 → /blog/ugc-pitch-template -->
+    <link rel="canonical" href="https://ugc-toolkit.com/blog/ugc-pitch-template" />
+    <!-- 同款 emoji favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧮</text></svg>" />
+    <link rel="stylesheet" href="/src/assets/content.css" />
+
+    <!-- ===== Open Graph ===== -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="UGC Pitch Template: Email Brands and Get Responses | UGC Toolkit" />
+    <meta property="og:description" content="Copy this UGC pitch template: two full cold email examples, a day-by-day follow-up cadence, and 2026 rate anchors ($75–250 to start)." />
+    <meta property="og:image" content="https://ugc-toolkit.com/og-image.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="UGC Toolkit" />
+
+    <!-- ===== Twitter Card（同 index 先例） ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="UGC Pitch Template: Email Brands and Get Responses | UGC Toolkit" />
+    <meta name="twitter:description" content="Copy this UGC pitch template: two full cold email examples, a follow-up cadence, and 2026 rate anchors." />
+    <meta name="twitter:image" content="https://ugc-toolkit.com/og-image.png" />
+
+    <!-- ===== JSON-LD：FAQPage（Answer 与页面可见 FAQ 文本逐字一致） ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long should a UGC pitch email be?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A UGC pitch email should take under 90 seconds to read — roughly 75 to 125 words across three short paragraphs, a subject line, and a PS. If a sentence does not help the brand decide, cut it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I find the right contact to send a UGC pitch to?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Check the brand's Instagram bio and link page for a \"partnerships\" or \"creators\" email — that inbox exists for exactly this. On LinkedIn, message a Social Media Manager rather than the CEO. For small brands, the website contact form works; mid-size and up, a named human beats a generic alias."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What rate should I quote in a UGC pitch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Beginners should anchor at $75–250 per video in 2026 community data, while most working creators land in the $150–300 range. Quote your rate when a casting call asks for it; otherwise send a rate card link and quote after they reply."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many times should I follow up on a UGC pitch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Follow up twice: on day 3–4 with something new (a finished piece, an idea, a number) and on day 8–10 with a polite close — then stop and re-approach the brand next quarter with new work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a portfolio to pitch UGC brands?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The beginner template above is built for zero paid work — your leverage is a fresh voice, current platform fluency, and stage-appropriate pricing. Spec videos strengthen the pitch, but they are not a precondition for sending it."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- ===== JSON-LD：Article ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "UGC Pitch Template: How to Email Brands and Get Responses (With Examples)",
+      "datePublished": "2026-11-21",
+      "dateModified": "2026-11-21",
+      "publisher": { "@type": "Organization", "name": "UGC Toolkit" },
+      "author": { "@type": "Organization", "name": "UGC Toolkit" },
+      "mainEntityOfPage": "https://ugc-toolkit.com/blog/ugc-pitch-template"
+    }
+    </script>
+
+    <!-- ===== GA4 延迟加载（spec §10 + perf：TBT 优化） =====
+         dataLayer/gtag 队列同步直出（延迟前的 gtag() 调用进队列不丢失）；
+         外部 gtag.js 改为首次交互（pointerdown/keydown/wheel）或 5s 兜底后注入，幂等只加载一次 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      (function () {
+        var EVENTS = ['pointerdown', 'keydown', 'wheel'];
+        var done = false;
+        var timer = 0;
+        function loadGA4() {
+          if (done) return;
+          done = true;
+          clearTimeout(timer);
+          EVENTS.forEach(function (n) { removeEventListener(n, loadGA4); });
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-52NE0FELYX';
+          document.head.appendChild(s);
+          gtag('js', new Date());
+          gtag('config', 'G-52NE0FELYX');
+        }
+        timer = setTimeout(loadGA4, 5000);
+        EVENTS.forEach(function (n) { addEventListener(n, loadGA4, { once: true, passive: true }); });
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
+    <!-- 纯 HTML+CSS，无业务 JS；仅 GA4 统计（延迟加载，见 head 内联脚本）。内容源：doc/product/seo-content/05-pitch-template.md（T5，C-CONTENT-4@1） -->
+    <header class="border-b border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-3xl items-center justify-between px-4 py-4">
+        <span class="text-lg font-bold">UGC Toolkit</span>
+        <a href="/" class="text-indigo-600 hover:underline">&larr; Back to calculator</a>
+      </div>
+    </header>
+    <main class="mx-auto max-w-3xl px-4 py-10">
+      <h1 class="text-3xl font-bold">UGC Pitch Template: How to Email Brands and Get Responses (With Examples)</h1>
+      <p class="mt-2 text-sm text-slate-600">Last updated: 2026-11</p>
+      <p class="mt-4 leading-relaxed">
+        A UGC pitch that gets a reply is short, specific, and easy to answer. This page breaks down the anatomy, gives you two full templates you can adapt today, and maps the follow-up cadence that turns silence into responses.
+      </p>
+
+      <h2 class="mt-10 text-xl font-bold">The anatomy of a cold pitch that gets read</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">
+        A cold pitch earns a reply when it does five jobs in under 90 seconds of reading: one subject line, three short paragraphs, and one PS. Anything longer reads as a memoir; anything vaguer reads as a mass email.
+      </p>
+      <p class="mt-3 leading-relaxed text-slate-600">
+        <strong>Subject line — name the brand, promise something countable.</strong> "Fresh [Niche] voice for [Brand Name] — 3 ideas inside" beats "Collaboration opportunity" because it proves the email is not a blast. A specific noun signals research; a countable promise tells the reader what opening the email buys them.
+      </p>
+      <p class="mt-3 leading-relaxed text-slate-600">
+        <strong>Paragraph 1 — one line about them.</strong> Reference a real moment: a product relaunch, a recent campaign, an angle their feed has not touched. This is your proof of work. If the first line could be sent to any brand, delete it and start over.
+      </p>
+      <p class="mt-3 leading-relaxed text-slate-600">
+        <strong>Paragraph 2 — two lines about you.</strong> What you make and why it fits their feed — no biography, no follower count, no adjectives doing a portfolio's job. Fit is demonstrated, not claimed.
+      </p>
+      <p class="mt-3 leading-relaxed text-slate-600">
+        <strong>Paragraph 3 — one clear ask.</strong> A question the reader can answer in a single sentence: "Want the three ideas plus a sample video?" One ask, one decision. Two asks make the reader do arithmetic; one does not.
+      </p>
+      <p class="mt-3 leading-relaxed text-slate-600">
+        <strong>PS — the low-pressure exit.</strong> The PS lowers the cost of replying: a graceful opt-out ("if Q1 content is locked, happy to reconnect next quarter") or a portfolio link with one line of context. Pressure kills replies. An exit ramp invites them.
+      </p>
+
+      <h2 class="mt-10 text-xl font-bold">UGC pitch template 1: the beginner cold email</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">
+        Use this UGC pitch template when you have zero paid brand work. It turns a missing track record into a pricing position: founder-stage rates for a fresh voice the audience has not already seen a hundred times.
+      </p>
+      <p class="mt-2 text-sm text-slate-500">
+        <em>Source: adapted from doc/product/pitch-pack/02-coldpitch.md (Template 2A). Replace every [Placeholder] before you send.</em>
+      </p>
+      <figure class="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-4">
+        <figcaption class="font-mono text-sm font-semibold text-slate-900">Subject: Fresh [Niche] voice for [Brand Name] — 3 ideas inside</figcaption>
+        <pre class="mt-3 whitespace-pre-wrap font-mono text-sm leading-relaxed text-slate-700">Hi [First Name],
+
+I'm [Your Name], a UGC creator in the [Niche] space. I've been following [Brand Name] since [Specific Moment — e.g., the [Product Name] relaunch], and I keep seeing one angle your feed hasn't touched: [One-Line Angle — e.g., "what the product actually looks like at week four, not day one"].
+
+I'll be straight with you: I'm new to paid brand work. What you get for that is founder-stage rates and a voice your audience hasn't already seen a hundred times.
+
+Want the three ideas plus a sample video? No strings attached.
+
+[Your Name]
+[Portfolio Link] · [Email Address]
+
+P.S. If Q1 content is already locked, no reply needed — happy to reconnect next quarter.</pre>
+      </figure>
+      <p class="mt-4 font-semibold">Why it works:</p>
+      <ul class="mt-2 list-disc space-y-2 pl-6 leading-relaxed text-slate-600">
+        <li>Saying "new to paid work" first frames your price instead of excusing it. Founder-stage rates are a position, not an apology.</li>
+        <li>Anchor inside the beginner band — $75–250 per video in 2026 community data — never at zero. Free work sets your reputation at exactly its price.</li>
+        <li>The three ideas must exist before you hit send. Follow-Up #1 below is where you deliver them.</li>
+      </ul>
+
+      <h2 class="mt-10 text-xl font-bold">UGC pitch template 2: the portfolio cold email</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">
+        Use this template once you have three or more finished spec videos — real products, self-shot, self-initiated. You are selling execution, and execution shows better than it tells.
+      </p>
+      <p class="mt-2 text-sm text-slate-500">
+        <em>Source: adapted from doc/product/pitch-pack/02-coldpitch.md (Template 2B). Replace every [Placeholder] before you send.</em>
+      </p>
+      <figure class="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-4">
+        <figcaption class="font-mono text-sm font-semibold text-slate-900">Subject: [Niche] UGC samples made for [Brand Name]'s feed</figcaption>
+        <pre class="mt-3 whitespace-pre-wrap font-mono text-sm leading-relaxed text-slate-700">Hi [First Name],
+
+I'm [Your Name], a UGC creator focused on [Niche]. My content is built to sell without feeling like an ad — hooks in the first two seconds, native pacing, real hands on real product.
+
+I've built [Number] spec pieces in your exact category, including [One-Line Concept — e.g., a "what I wish I knew before buying my first [Product Type]" angle]. If it lands, that's the baseline quality [Brand Name] gets from me — not the ceiling.
+
+Portfolio and rates: [Portfolio Link]. Worth two minutes of your afternoon?
+
+[Your Name]
+[Portfolio Link] · [Email Address]
+
+P.S. Every piece on that page was self-initiated — real product, real spend, no brief.</pre>
+      </figure>
+      <p class="mt-4 font-semibold">Why it works:</p>
+      <ul class="mt-2 list-disc space-y-2 pl-6 leading-relaxed text-slate-600">
+        <li>A "spec piece" means you bought the product and made the video on your own initiative. Say so — transparency reads as professionalism.</li>
+        <li>Quote toward the top of your band when a spec piece features their exact product. That is the strongest position you will ever have.</li>
+        <li>"Baseline quality, not the ceiling" does the promising for you. Confidence shows; it doesn't announce itself.</li>
+      </ul>
+
+      <p class="mt-6 leading-relaxed">
+        Two templates cover two stages of your pipeline. Thirteen cover the rest of it — for $9.
+      </p>
+
+      <!-- GUMROAD CTA #1（按钮式）：示例邮件小节末尾 -->
+      <div class="mt-6 rounded-lg border border-indigo-200 bg-indigo-50 p-6 text-center">
+        <a href="https://ugctoolkit.gumroad.com/l/jlfmgx" target="_blank" rel="noopener" class="inline-block rounded-lg bg-indigo-600 px-6 py-3 font-semibold text-white hover:bg-indigo-700">Land the deal — $9 Pitch Pack</a>
+        <p class="mt-3 text-sm text-slate-600">13 pitch, follow-up &amp; negotiation templates + a data-backed rate card — $9.</p>
+      </div>
+
+      <h2 class="mt-10 text-xl font-bold">The follow-up cadence: when to send, when to stop</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">
+        Follow up exactly twice — day 3–4 and day 8–10 — then stop. Silence after a cold pitch usually means a buried inbox, not a no; the follow-up is how your pitch resurfaces.
+      </p>
+      <table class="mt-4 w-full text-sm">
+        <thead>
+          <tr class="bg-slate-100 text-left">
+            <th class="px-3 py-2 font-semibold">Day</th>
+            <th class="px-3 py-2 font-semibold">Move</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-t border-slate-200">
+            <td class="px-3 py-2">0</td>
+            <td class="px-3 py-2">Cold pitch</td>
+          </tr>
+          <tr class="border-t border-slate-200">
+            <td class="px-3 py-2">3–4</td>
+            <td class="px-3 py-2">Follow-Up #1 — the value-add bump</td>
+          </tr>
+          <tr class="border-t border-slate-200">
+            <td class="px-3 py-2">8–10</td>
+            <td class="px-3 py-2">Follow-Up #2 — the polite close</td>
+          </tr>
+          <tr class="border-t border-slate-200">
+            <td class="px-3 py-2">10+</td>
+            <td class="px-3 py-2">Stop. Re-approach next quarter with new work.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="mt-4 font-semibold">Rules of the road:</p>
+      <ul class="mt-2 list-disc space-y-2 pl-6 leading-relaxed text-slate-600">
+        <li>Always reply within your original thread, so your first email sits one scroll away.</li>
+        <li>Every follow-up must add something new — a finished piece, an idea, a number. "Just checking in" adds nothing and reads as pressure.</li>
+        <li>Two follow-ups maximum per campaign, one channel at a time. If you emailed, don't also DM the same day.</li>
+      </ul>
+      <p class="mt-4 leading-relaxed text-slate-600">
+        Here is Follow-Up #1, three to four business days after the pitch. <em>Source: adapted from doc/product/pitch-pack/03-followup.md.</em>
+      </p>
+      <figure class="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-4">
+        <pre class="whitespace-pre-wrap font-mono text-sm leading-relaxed text-slate-700">Hi [First Name],
+
+Floating this back up with something new: I just finished a [Niche] spec piece that maps almost one-to-one onto [Brand Name]'s feed — [One-Line Description or Link].
+
+If Q1 content is already locked, no worries at all. If there's room for one more creator, I'd love to send two concepts built around [Product Name].
+
+[Your Name]</pre>
+      </figure>
+      <p class="mt-4 leading-relaxed text-slate-600">
+        The graceful exit line ("no worries at all") isn't weakness — it lowers the cost of replying, which is the entire game. On day 8–10, send the polite close: take the silence as timing, leave your portfolio link, thank them for one thing you genuinely like about the brand. A closed loop isn't a dead lead — log the brand and the date, and re-approach next quarter with new work.
+      </p>
+
+      <h2 class="mt-10 text-xl font-bold">Anchor your rate before you hit send</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">
+        In 2026, UGC creators charge anywhere from $75 to $1,000+ per video — beginners start at $75–250, and most working creators land in the $150–300 range. Send no pitch without your number: run your scenario through the free <a href="/" class="text-indigo-600 hover:underline">UGC rate calculator</a> — content type, usage rights, experience — and quote it with a straight face. A rate card that shows its source beats a rounded-down apology.
+      </p>
+
+      <h2 class="mt-10 text-xl font-bold">Get all 13 templates + the rate card — $9</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">
+        This page gives away two templates. The <a href="https://ugctoolkit.gumroad.com/l/jlfmgx" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">UGC Pitch Template Pack</a> gives you all thirteen — every cold pitch stage, both follow-ups, four negotiation scripts — plus a rate card that arrives with 2026 numbers already in it, for $9.
+      </p>
+      <p class="mt-4 font-semibold">Inside the pack:</p>
+      <ul class="mt-2 list-disc space-y-2 pl-6 leading-relaxed text-slate-600">
+        <li>4 cold pitch emails — one per stage: no paid work yet, spec portfolio, paid case studies, answering a casting call</li>
+        <li>2 follow-up emails + the full cadence table</li>
+        <li>4 negotiation scripts — discount pushback, free usage rights requests, raising your rate at 90 days, scope creep</li>
+        <li>3 inbound reply templates for when brands come to you first</li>
+        <li>a 12-point contract red-flags checklist</li>
+        <li>a one-page media kit structure with a worked example</li>
+        <li>a rate card pre-loaded with benchmark ranges — based on aggregated public benchmarks, the same data behind the free calculator</li>
+      </ul>
+      <p class="mt-4 leading-relaxed text-slate-600">
+        Every piece is ready to edit and send today. If the pack and the calculator ever disagree, trust the calculator — it's the living version.
+      </p>
+
+      <!-- GUMROAD CTA #2（按钮式）：pack 小节末尾 -->
+      <div class="mt-6 rounded-lg border border-indigo-200 bg-indigo-50 p-6 text-center">
+        <a href="https://ugctoolkit.gumroad.com/l/jlfmgx" target="_blank" rel="noopener" class="inline-block rounded-lg bg-indigo-600 px-6 py-3 font-semibold text-white hover:bg-indigo-700">Land the deal — $9 Pitch Pack</a>
+        <p class="mt-3 text-sm text-slate-600">13 pitch, follow-up &amp; negotiation templates + a data-backed rate card — $9.</p>
+      </div>
+
+      <p class="mt-8 leading-relaxed">
+        Read next: pricing foundations. The <a href="/blog/how-much-to-charge-ugc" class="text-indigo-600 hover:underline">complete pricing guide</a> covers every rate tier, content multiplier, and usage-rights ladder in one place.
+      </p>
+
+      <section id="faq">
+        <h2 class="mt-10 text-xl font-bold">Frequently Asked Questions</h2>
+        <h3 class="mt-6 font-semibold">How long should a UGC pitch email be?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">A UGC pitch email should take under 90 seconds to read — roughly 75 to 125 words across three short paragraphs, a subject line, and a PS. If a sentence does not help the brand decide, cut it.</p>
+        <h3 class="mt-6 font-semibold">How do I find the right contact to send a UGC pitch to?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">Check the brand's Instagram bio and link page for a "partnerships" or "creators" email — that inbox exists for exactly this. On LinkedIn, message a Social Media Manager rather than the CEO. For small brands, the website contact form works; mid-size and up, a named human beats a generic alias.</p>
+        <h3 class="mt-6 font-semibold">What rate should I quote in a UGC pitch?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">Beginners should anchor at $75–250 per video in 2026 community data, while most working creators land in the $150–300 range. Quote your rate when a casting call asks for it; otherwise send a rate card link and quote after they reply.</p>
+        <h3 class="mt-6 font-semibold">How many times should I follow up on a UGC pitch?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">Follow up twice: on day 3–4 with something new (a finished piece, an idea, a number) and on day 8–10 with a polite close — then stop and re-approach the brand next quarter with new work.</p>
+        <h3 class="mt-6 font-semibold">Do I need a portfolio to pitch UGC brands?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">No. The beginner template above is built for zero paid work — your leverage is a fresh voice, current platform fluency, and stage-appropriate pricing. Spec videos strengthen the pitch, but they are not a precondition for sending it.</p>
+      </section>
+    </main>
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto max-w-3xl px-4 py-6 text-sm text-slate-600">
+        <!-- 页脚与主站一致：免责声明 + Not financial advice + 联盟披露 + 合规链接组 -->
+        <p>Estimates based on community data &mdash; verify against your niche. Not financial advice.</p>
+        <p class="mt-2">Some links on this site may be affiliate links. If you buy through them, we may earn a commission at no extra cost to you.</p>
+        <nav class="mt-3 flex gap-4" aria-label="Legal">
+          <a href="/" class="text-indigo-600 hover:underline">Calculator</a>
+          <a href="/blog/how-much-to-charge-ugc" class="text-indigo-600 hover:underline">Pricing Guide</a>
+          <a href="/privacy" class="text-indigo-600 hover:underline">Privacy Policy</a>
+          <a href="/terms" class="text-indigo-600 hover:underline">Terms of Service</a>
+          <a href="/privacy#ccpa" class="text-indigo-600 hover:underline">Do Not Sell or Share My Personal Information</a>
+        </nav>
+        <p class="mt-3">&copy; 2026 UGC Toolkit</p>
+      </div>
+    </footer>
+  </body>
+</html>

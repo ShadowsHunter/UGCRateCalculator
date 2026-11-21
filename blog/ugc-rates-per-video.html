@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UGC Rates per Video in 2026: Beginner to Premium Benchmarks | UGC Toolkit</title>
+    <meta name="description" content="UGC rates per video in 2026: $75 to $1,000+. Benchmark tables by experience, content type, and influencer status, based on aggregated public benchmarks." />
+    <meta name="robots" content="index, follow" />
+    <!-- 自指 canonical 用 clean URL：Cloudflare Pages 将 /blog/ugc-rates-per-video.html 301 → clean URL -->
+    <link rel="canonical" href="https://ugc-toolkit.com/blog/ugc-rates-per-video" />
+    <!-- 同款 emoji favicon（privacy.html 逐字复制） -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧮</text></svg>" />
+    <link rel="stylesheet" href="/src/assets/content.css" />
+
+    <!-- ===== Open Graph（og:type=article） ===== -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="UGC Rates per Video in 2026: Beginner to Premium Benchmarks | UGC Toolkit" />
+    <meta property="og:description" content="UGC rates per video in 2026: $75 to $1,000+. Benchmark tables by experience, content type, and influencer status, based on aggregated public benchmarks." />
+    <meta property="og:image" content="https://ugc-toolkit.com/og-image.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="UGC Toolkit" />
+
+    <!-- ===== Twitter Card（同 index.html 先例） ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="UGC Rates per Video in 2026: Beginner to Premium Benchmarks | UGC Toolkit" />
+    <meta name="twitter:description" content="UGC rates per video in 2026: $75 to $1,000+. Benchmark tables by experience, content type, and influencer status." />
+    <meta name="twitter:image" content="https://ugc-toolkit.com/og-image.png" />
+
+    <!-- ===== FAQPage JSON-LD（Answer 与页面可见 FAQ 文本逐字一致） ===== -->
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How much should a beginner charge for a UGC video?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Beginners charge $75–250 per video for raw-footage delivery, based on aggregated public benchmarks. If you have under six months of experience and a few paid deals, quoting inside that range is standard. With a solid portfolio, most working creators land in the $150–300 range for a standard edited video." } },
+        { "@type": "Question", "name": "What is the average UGC rate per video in 2026?",
+          "acceptedAnswer": { "@type": "Answer", "text": "UGC rates per video range from $75 to $1,000+ in 2026. The four experience tiers price at $75–250 (beginner), $150–350 (intermediate), $250–600 (advanced), and $500–1,000+ (premium). Most working creators land in the $150–300 range for a standard edited video." } },
+        { "@type": "Question", "name": "How much extra should I charge for usage rights?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Charge +30–100%+ on top of your base rate, depending on the license: 30-day rights add +30–50%, 90-day to 12-month rights add +50–100%, and a full buyout adds +100%+. Exclusivity is a separate line item at an additional +25–100%." } },
+        { "@type": "Question", "name": "Do more followers mean a higher UGC rate?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not for the production fee. UGC rates are based on your content and the rights you sell, not your reach. Followers only matter when you also post from your own account — that adds a distribution fee of $10–8,000 per video: $10–100 at nano (1K–10K followers), $100–800 at micro (10K–100K), $500–2,000 at mid-tier (100K–500K), and $2,000–8,000 at macro (500K+)." } },
+        { "@type": "Question", "name": "Which platform pays the most for UGC videos?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No platform pays meaningfully more. Delivery specs can shift the price slightly — for example, when a brief requires longer edits or extra formats — but the same deliverable should be quoted at the same rate on TikTok, Instagram Reels, or YouTube Shorts." } }
+      ] }
+    </script>
+    <!-- ===== Article JSON-LD ===== -->
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "Article",
+      "headline": "UGC Rates per Video in 2026: Beginner to Premium Benchmarks",
+      "datePublished": "2026-11-21",
+      "dateModified": "2026-11-21",
+      "publisher": { "@type": "Organization", "name": "UGC Toolkit" },
+      "author": { "@type": "Organization", "name": "UGC Toolkit" },
+      "mainEntityOfPage": "https://ugc-toolkit.com/blog/ugc-rates-per-video" }
+    </script>
+
+    <!-- ===== GA4 延迟加载（spec §10 + perf：TBT 优化） =====
+         dataLayer/gtag 队列同步直出（延迟前的 gtag() 调用进队列不丢失）；
+         外部 gtag.js 改为首次交互（pointerdown/keydown/wheel）或 5s 兜底后注入，幂等只加载一次 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      (function () {
+        var EVENTS = ['pointerdown', 'keydown', 'wheel'];
+        var done = false;
+        var timer = 0;
+        function loadGA4() {
+          if (done) return;
+          done = true;
+          clearTimeout(timer);
+          EVENTS.forEach(function (n) { removeEventListener(n, loadGA4); });
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-52NE0FELYX';
+          document.head.appendChild(s);
+          gtag('js', new Date());
+          gtag('config', 'G-52NE0FELYX');
+        }
+        timer = setTimeout(loadGA4, 5000);
+        EVENTS.forEach(function (n) { addEventListener(n, loadGA4, { once: true, passive: true }); });
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
+    <!-- 纯 HTML+CSS，无业务 JS；仅 GA4 统计（延迟加载，见 head 内联脚本）。数据表页：表格优先于长段落（D04 §2.10） -->
+    <header class="border-b border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-3xl items-center justify-between px-4 py-4">
+        <span class="text-lg font-bold">UGC Toolkit</span>
+        <a href="/" class="text-indigo-600 hover:underline">&larr; Back to calculator</a>
+      </div>
+    </header>
+    <main class="mx-auto max-w-3xl px-4 py-10">
+      <h1 class="text-3xl font-bold">UGC Rates per Video in 2026: Beginner to Premium Benchmarks</h1>
+      <p class="mt-2 text-sm text-slate-600">Last updated: 2026-11 &middot; By UGC Toolkit</p>
+
+      <p class="mt-4 leading-relaxed text-slate-600">UGC rates per video range from <strong>$75 to $1,000+ in 2026</strong>. Beginners charge $75–250 per video, intermediate creators charge $150–350, advanced creators charge $250–600, and premium creators with brand case studies command $500–1,000+. Most working creators land in the $150–300 range for a standard edited video. Every figure on this page is based on aggregated public benchmarks, current as of November 2026.</p>
+
+      <p class="mt-4 leading-relaxed text-slate-600">This page is the data layer: four tables that show exactly where your number sits. If you want the full pricing playbook — how to quote, how to negotiate, how to raise rates — start with the <a href="/blog/how-much-to-charge-ugc" class="text-indigo-600 hover:underline">complete pricing guide</a>.</p>
+      <section>
+        <h2 class="mt-10 text-xl font-bold">Average UGC Rates per Video by Experience</h2>
+        <p class="mt-4 leading-relaxed text-slate-600">What should you charge per UGC video? Your experience tier sets the base: $75–250 for beginners, $150–350 for intermediate creators, $250–600 for advanced creators, and $500–1,000 for premium creators. These are base rates for raw-footage delivery, in US dollars per video.</p>
+
+        <table class="mt-4 w-full text-sm">
+          <thead class="bg-slate-100">
+            <tr>
+              <th scope="col" class="px-3 py-2 text-left">Experience tier</th>
+              <th scope="col" class="px-3 py-2 text-left">Typical profile</th>
+              <th scope="col" class="px-3 py-2 text-left">Base rate per video (USD)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="px-3 py-2 font-medium">Beginner</td>
+              <td class="px-3 py-2">Under 6 months, a few paid deals</td>
+              <td class="px-3 py-2">$75–250</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Intermediate</td>
+              <td class="px-3 py-2">Solid portfolio, repeat clients</td>
+              <td class="px-3 py-2">$150–350</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Advanced</td>
+              <td class="px-3 py-2">Proven results, niche authority</td>
+              <td class="px-3 py-2">$250–600</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Premium</td>
+              <td class="px-3 py-2">Niche authority, case studies with brands</td>
+              <td class="px-3 py-2">$500–1,000</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="mt-4 leading-relaxed text-slate-600">Three things to notice in this table:</p>
+        <ul class="mt-3 list-disc space-y-2 pl-6 leading-relaxed text-slate-600">
+          <li><strong>The ranges overlap on purpose.</strong> A strong intermediate creator with repeat clients can out-earn a weak advanced one. Your tier is a starting point, not a ceiling.</li>
+          <li><strong>&ldquo;Premium&rdquo; is about proof, not time.</strong> The $500–1,000 tier is unlocked by brand case studies — work that shows results — not by years in the game.</li>
+          <li><strong>Most working creators land in the $150–300 range</strong> for a standard edited video. If you are quoting below $150 with a real portfolio, you are underpricing.</li>
+        </ul>
+
+        <p class="mt-4 leading-relaxed text-slate-600">The base rate covers you filming the content. What the brand is allowed to do with it comes next.</p>
+
+        <p class="mt-4 leading-relaxed text-slate-600">Where do you fit? The honest test is your last three deals: if brands came back for repeat work, you are at least intermediate; if you can show case studies with results, advanced pricing is defensible. Most creators self-assess one tier too low — the market pays for the proof you already have, not for permission.</p>
+      </section>
+
+      <section>
+        <h2 class="mt-10 text-xl font-bold">Content Type Multipliers: What the Brand Gets Changes the Price</h2>
+        <p class="mt-4 leading-relaxed text-slate-600">How much does content type change the price? Multiply the base rate by the deliverable: raw footage carries a ×1.0–1.3 multiplier, an edited video ×1.0–1.2, and a video sold with usage rights ×1.25–2.0.</p>
+
+        <table class="mt-4 w-full text-sm">
+          <thead class="bg-slate-100">
+            <tr>
+              <th scope="col" class="px-3 py-2 text-left">Deliverable</th>
+              <th scope="col" class="px-3 py-2 text-left">What the brand gets</th>
+              <th scope="col" class="px-3 py-2 text-left">Multiplier on base rate</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="px-3 py-2 font-medium">Raw footage</td>
+              <td class="px-3 py-2">You film, the brand edits</td>
+              <td class="px-3 py-2">×1.0–1.3</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Edited video</td>
+              <td class="px-3 py-2">Cut, captioned, ready to post</td>
+              <td class="px-3 py-2">×1.0–1.2</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">With usage rights</td>
+              <td class="px-3 py-2">The brand can reuse your video in its own ads</td>
+              <td class="px-3 py-2">×1.25–2.0</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="mt-4 leading-relaxed text-slate-600">Two details surprise new creators:</p>
+        <ul class="mt-3 list-disc space-y-2 pl-6 leading-relaxed text-slate-600">
+          <li><strong>Raw footage earns a premium of +20–30%.</strong> Brands pay extra for raw, unfiltered clips because they want the authentic version to edit themselves. &ldquo;Unedited&rdquo; does not mean &ldquo;cheap.&rdquo;</li>
+          <li><strong>Usage rights are a separate line item, not a rounding error.</strong> Charge +30–100%+ on top of your base rate depending on license length: 30-day rights add +30–50%, 90-day to 12-month rights add +50–100%, and a full buyout adds +100%+. If the brand wants exclusivity, that is another +25–100% on top.</li>
+        </ul>
+
+        <p class="mt-4 leading-relaxed text-slate-600">The edited video (×1.0–1.2) is the standard deliverable most deals start from — it is what &ldquo;a UGC video&rdquo; means by default.</p>
+      </section>
+      <section>
+        <h2 class="mt-10 text-xl font-bold">Influencer Posting: The Only Time Followers Matter</h2>
+        <p class="mt-4 leading-relaxed text-slate-600">How much does posting from your own account add? Between $10 and $8,000 per video, depending on your follower tier. This is a distribution fee on top of your UGC rate — the brand pays for your audience, not for the video itself.</p>
+
+        <table class="mt-4 w-full text-sm">
+          <thead class="bg-slate-100">
+            <tr>
+              <th scope="col" class="px-3 py-2 text-left">Follower tier</th>
+              <th scope="col" class="px-3 py-2 text-left">Followers</th>
+              <th scope="col" class="px-3 py-2 text-left">Add-on per video (USD)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="px-3 py-2 font-medium">Nano</td>
+              <td class="px-3 py-2">1K–10K</td>
+              <td class="px-3 py-2">$10–100</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Micro</td>
+              <td class="px-3 py-2">10K–100K</td>
+              <td class="px-3 py-2">$100–800</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Mid-tier</td>
+              <td class="px-3 py-2">100K–500K</td>
+              <td class="px-3 py-2">$500–2,000</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Macro</td>
+              <td class="px-3 py-2">500K+</td>
+              <td class="px-3 py-2">$2,000–8,000</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="mt-4 leading-relaxed text-slate-600">The key distinction: <strong>your UGC production rate does not depend on followers.</strong> Brands pay for the video, not your reach. The moment you also post from your own handle, you are selling distribution as well as content — and that is priced separately, using the tiers above.</p>
+
+        <p class="mt-4 leading-relaxed text-slate-600">Tier boundaries fall at 1K, 10K, 100K, and 500K followers. If you are at 95K followers, you quote as micro until you cross 100K.</p>
+      </section>
+
+      <section>
+        <h2 class="mt-10 text-xl font-bold">Platform Differences: Smaller Than You Think</h2>
+        <p class="mt-4 leading-relaxed text-slate-600">Do UGC rates per video change by platform? Only slightly — delivery specs can shift the price slightly, but the platform itself is not a pricing factor worth building a quote around.</p>
+
+        <table class="mt-4 w-full text-sm">
+          <thead class="bg-slate-100">
+            <tr>
+              <th scope="col" class="px-3 py-2 text-left">Platform</th>
+              <th scope="col" class="px-3 py-2 text-left">Pricing note</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="px-3 py-2 font-medium">TikTok</td>
+              <td class="px-3 py-2">The default short-form deliverable. No meaningful price difference on its own.</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Instagram Reels</td>
+              <td class="px-3 py-2">Delivery specs can shift the price slightly — often when the brief asks for longer edits or extra formats.</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">YouTube Shorts</td>
+              <td class="px-3 py-2">Delivery specs can shift the price slightly.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="mt-4 leading-relaxed text-slate-600">The honest position: public benchmark data does not support a reliable platform premium. A creator quoting $250 for an edited video on TikTok should quote the same number for the same deliverable on Reels. If a brief asks for more — extra formats, longer cuts, more revisions — price the extra work, not the platform.</p>
+      </section>
+      <section>
+        <h2 class="mt-10 text-xl font-bold">What Drives the Price: Four Factors</h2>
+        <p class="mt-4 leading-relaxed text-slate-600">What actually sets UGC rates per video? Four things: your experience tier, the content type, the usage rights you sell, and whether you post from your own account.</p>
+
+        <ol class="mt-3 list-decimal space-y-2 pl-6 leading-relaxed text-slate-600">
+          <li><strong>Experience tier.</strong> Sets the base range, from $75 for a first paid deal to $1,000+ for premium creators with case studies. It is the single biggest lever — and the one you climb with proof of results.</li>
+          <li><strong>Content type.</strong> Raw footage and edited videos price differently (×1.0–1.3 and ×1.0–1.2) because the brand receives different things.</li>
+          <li><strong>Usage rights.</strong> The license is where deals double: +30–100%+ depending on license length, plus +25–100% for exclusivity. Whitelisting — running your video as paid ads from your handle — is priced as a monthly fee instead: $100–500/mo per platform.</li>
+          <li><strong>Influencer status.</strong> Posting from your own account adds a distribution fee of $10–8,000, tiered at 1K/10K/100K/500K followers.</li>
+        </ol>
+
+        <p class="mt-4 leading-relaxed text-slate-600">Some creators also add performance bonuses to their deals: a common industry ladder pays $100 at 100K views, $250 at 250K, and $500 at 500K. Treat these as deal sweeteners, not as your core rate — bonuses are the first thing brands cut when budgets tighten.</p>
+      </section>
+
+      <section>
+        <h2 class="mt-10 text-xl font-bold">How to Use These Benchmarks</h2>
+        <p class="mt-4 leading-relaxed text-slate-600">How do you turn these tables into a quote? Start from your tier's base range, adjust for the deliverable, then price rights and distribution as separate line items.</p>
+
+        <ol class="mt-3 list-decimal space-y-2 pl-6 leading-relaxed text-slate-600">
+          <li><strong>Find your tier in the first table.</strong> Be honest about proof: the tier that matters is the one your portfolio supports.</li>
+          <li><strong>Apply the content type multiplier</strong> from the second table to set the per-video rate for the deliverable.</li>
+          <li><strong>Quote usage rights separately</strong> — +30–100%+ by license length, +25–100% more for exclusivity. Never bundle rights into the base rate for free.</li>
+          <li><strong>Add the distribution fee from the third table</strong> only if you post from your own account.</li>
+        </ol>
+
+        <p class="mt-4 leading-relaxed text-slate-600">Quote a range, not a single number — it leaves room to negotiate scope instead of price. And re-quote repeat clients every 90 days: your rate should grow with your portfolio.</p>
+      </section>
+      <section>
+        <h2 class="mt-10 text-xl font-bold">Price Your Next Video in 30 Seconds</h2>
+        <div class="mt-4 rounded-lg border border-indigo-200 bg-indigo-50 p-6">
+          <p class="leading-relaxed text-slate-600">These tables are the map. The <a href="/" class="font-semibold text-indigo-600 hover:underline">UGC rate calculator</a> is the shortcut: pick your experience tier, content type, and rights, and it prices the deal using the same 2026 benchmark data behind this page.</p>
+          <p class="mt-3 leading-relaxed text-slate-600">New to UGC pricing? Read the <a href="/blog/how-much-to-charge-ugc" class="font-semibold text-indigo-600 hover:underline">complete pricing guide</a> first — it covers the full pricing method, whitelisting monthly fees, and how to raise your rates without losing clients.</p>
+        </div>
+      </section>
+
+      <section id="faq">
+        <h2 class="mt-10 text-xl font-bold">Frequently Asked Questions</h2>
+
+        <h3 class="mt-8 font-semibold">How much should a beginner charge for a UGC video?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">Beginners charge $75–250 per video for raw-footage delivery, based on aggregated public benchmarks. If you have under six months of experience and a few paid deals, quoting inside that range is standard. With a solid portfolio, most working creators land in the $150–300 range for a standard edited video.</p>
+
+        <h3 class="mt-8 font-semibold">What is the average UGC rate per video in 2026?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">UGC rates per video range from $75 to $1,000+ in 2026. The four experience tiers price at $75–250 (beginner), $150–350 (intermediate), $250–600 (advanced), and $500–1,000+ (premium). Most working creators land in the $150–300 range for a standard edited video.</p>
+
+        <h3 class="mt-8 font-semibold">How much extra should I charge for usage rights?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">Charge +30–100%+ on top of your base rate, depending on the license: 30-day rights add +30–50%, 90-day to 12-month rights add +50–100%, and a full buyout adds +100%+. Exclusivity is a separate line item at an additional +25–100%.</p>
+
+        <h3 class="mt-8 font-semibold">Do more followers mean a higher UGC rate?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">Not for the production fee. UGC rates are based on your content and the rights you sell, not your reach. Followers only matter when you also post from your own account — that adds a distribution fee of $10–8,000 per video: $10–100 at nano (1K–10K followers), $100–800 at micro (10K–100K), $500–2,000 at mid-tier (100K–500K), and $2,000–8,000 at macro (500K+).</p>
+
+        <h3 class="mt-8 font-semibold">Which platform pays the most for UGC videos?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">No platform pays meaningfully more. Delivery specs can shift the price slightly — for example, when a brief requires longer edits or extra formats — but the same deliverable should be quoted at the same rate on TikTok, Instagram Reels, or YouTube Shorts.</p>
+      </section>
+    </main>
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto max-w-3xl px-4 py-6 text-sm text-slate-600">
+        <!-- 页脚与主站一致：免责声明 + Not financial advice + 联盟披露 + 合规链接组 -->
+        <p>Estimates based on community data &mdash; verify against your niche. Not financial advice.</p>
+        <p class="mt-2">Some links on this site may be affiliate links. If you buy through them, we may earn a commission at no extra cost to you.</p>
+        <nav class="mt-3 flex gap-4" aria-label="Legal">
+          <a href="/" class="text-indigo-600 hover:underline">Calculator</a>
+          <a href="/blog/how-much-to-charge-ugc" class="text-indigo-600 hover:underline">Pricing Guide</a>
+          <a href="/privacy" class="text-indigo-600 hover:underline">Privacy Policy</a>
+          <a href="/terms" class="text-indigo-600 hover:underline">Terms of Service</a>
+          <a href="/privacy#ccpa" class="text-indigo-600 hover:underline">Do Not Sell or Share My Personal Information</a>
+        </nav>
+        <p class="mt-3">&copy; 2026 UGC Toolkit</p>
+      </div>
+    </footer>
+  </body>
+</html>

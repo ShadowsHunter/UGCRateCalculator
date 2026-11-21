@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UGC Usage Rights Pricing: 30-Day, 90-Day &amp; Buyout Rates | UGC Toolkit</title>
+    <meta name="description" content="UGC usage rights pricing explained: add +30-50% for 30-day, +50-100% for 90-day to 12-month, +100%+ for buyout. Worked math examples included." />
+    <meta name="robots" content="index, follow" />
+    <!-- 自指 canonical 用 clean URL：Cloudflare Pages 将 /blog/ugc-usage-rights-pricing.html 301 → clean URL -->
+    <link rel="canonical" href="https://ugc-toolkit.com/blog/ugc-usage-rights-pricing" />
+    <!-- 同款 emoji favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧮</text></svg>" />
+    <link rel="stylesheet" href="/src/assets/content.css" />
+
+    <!-- ===== Open Graph ===== -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="UGC Toolkit" />
+    <meta property="og:url" content="https://ugc-toolkit.com/blog/ugc-usage-rights-pricing" />
+    <meta property="og:title" content="UGC Usage Rights Pricing: 30-Day, 90-Day &amp; Buyout Rates | UGC Toolkit" />
+    <meta property="og:description" content="UGC usage rights pricing explained: add +30-50% for 30-day, +50-100% for 90-day to 12-month, +100%+ for buyout. Worked math examples included." />
+    <meta property="og:image" content="https://ugc-toolkit.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="UGC usage rights pricing — tiered multipliers and worked math examples" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- ===== Twitter Card ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="UGC Usage Rights Pricing: 30-Day, 90-Day &amp; Buyout Rates | UGC Toolkit" />
+    <meta name="twitter:description" content="UGC usage rights pricing explained: add +30-50% for 30-day, +50-100% for 90-day to 12-month, +100%+ for buyout." />
+    <meta name="twitter:image" content="https://ugc-toolkit.com/og-image.png" />
+
+    <!-- ===== FAQPage JSON-LD（Answer 与页面可见 FAQ 文本逐字一致） ===== -->
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How much should I charge for a 30-day usage rights license?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Add +30–50% of your base rate. On a $250 base video, that is $250 × 1.3–1.5 = $325–375 for the video plus the 30-day license." } },
+        { "@type": "Question", "name": "How much should I charge for a usage rights buyout?",
+          "acceptedAnswer": { "@type": "Answer", "text": "At least +100% of your base rate — double the video price. A $250 base becomes $250 × 2.0 = $500, and more if the contract grants perpetual, worldwide, sublicensable rights." } },
+        { "@type": "Question", "name": "How much extra is exclusivity in a UGC deal?",
+          "acceptedAnswer": { "@type": "Answer", "text": "+25–100% of your base rate, charged on top of the usage rights fee. Exclusivity restricts which competing brands you can work with for a window (usually 30 or 90 days), so it prices separately from the license itself." } },
+        { "@type": "Question", "name": "Is whitelisting the same as usage rights?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Usage rights license your content — the brand runs your video from its own ad accounts. Whitelisting lets the brand run paid ads from your social handle, billed monthly at $100–500/mo per platform on top of your video rate." } },
+        { "@type": "Question", "name": "What multiplier should I apply to a video sold with usage rights?",
+          "acceptedAnswer": { "@type": "Answer", "text": "×1.25–2.0 of your base rate, depending on license length: a 30-day license sits at the low end (+30–50%), 90-day to 12-month deals mid-band (+50–100%), and buyouts at ×2.0 or higher (+100%+)." } }
+      ] }
+    </script>
+
+    <!-- ===== Article JSON-LD ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Usage Rights Pricing: How Much to Charge for 30-Day, 90-Day and Buyout UGC",
+      "description": "UGC usage rights pricing explained: add +30-50% for 30-day, +50-100% for 90-day to 12-month, +100%+ for buyout. Worked math examples included.",
+      "datePublished": "2026-11-21",
+      "dateModified": "2026-11-21",
+      "inLanguage": "en",
+      "image": "https://ugc-toolkit.com/og-image.png",
+      "publisher": { "@type": "Organization", "name": "UGC Toolkit" },
+      "author": { "@type": "Organization", "name": "UGC Toolkit" },
+      "mainEntityOfPage": "https://ugc-toolkit.com/blog/ugc-usage-rights-pricing"
+    }
+    </script>
+
+    <!-- ===== GA4 延迟加载（spec §10 + perf：TBT 优化） =====
+         dataLayer/gtag 队列同步直出（延迟前的 gtag() 调用进队列不丢失）；
+         外部 gtag.js 改为首次交互（pointerdown/keydown/wheel）或 5s 兜底后注入，幂等只加载一次 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      (function () {
+        var EVENTS = ['pointerdown', 'keydown', 'wheel'];
+        var done = false;
+        var timer = 0;
+        function loadGA4() {
+          if (done) return;
+          done = true;
+          clearTimeout(timer);
+          EVENTS.forEach(function (n) { removeEventListener(n, loadGA4); });
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-52NE0FELYX';
+          document.head.appendChild(s);
+          gtag('js', new Date());
+          gtag('config', 'G-52NE0FELYX');
+        }
+        timer = setTimeout(loadGA4, 5000);
+        EVENTS.forEach(function (n) { addEventListener(n, loadGA4, { once: true, passive: true }); });
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
+    <!-- 纯 HTML+CSS 内容页（C-PAGE-TEMPLATE@1 骨架），无业务 JS；仅 GA4 统计（延迟加载，见 head 内联脚本） -->
+    <header class="border-b border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-3xl items-center justify-between px-4 py-4">
+        <span class="text-lg font-bold">UGC Toolkit</span>
+        <a href="/" class="text-indigo-600 hover:underline">&larr; Back to calculator</a>
+      </div>
+    </header>
+    <main class="mx-auto max-w-3xl px-4 py-10">
+      <h1 class="text-3xl font-bold">Usage Rights Pricing: How Much to Charge for 30-Day, 90-Day and Buyout UGC</h1>
+      <p class="mt-2 text-sm text-slate-600">Last updated: 2026-11</p>
+
+      <p class="mt-4 leading-relaxed text-slate-600">The most expensive habit in UGC isn't undercharging for videos — it's handing brands a license for free. A brand that pays $250 for a video and walks away with perpetual ad rights has bought two products and paid for one. This guide prices the second product: usage rights by license length, from 30-day test windows to full buyouts, with the tiered multipliers, the exclusivity stack, the whitelisting split, and worked math for each — based on aggregated public benchmarks.</p>
+
+      <h2 class="mt-10 text-xl font-bold">What Are Usage Rights?</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Usage rights are a license to use your content — the brand is buying permission to run your video in its own channels and ads, not buying the video itself. You keep ownership of the footage; the brand rents what that footage can do for its marketing.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">That distinction is why usage rights are quoted as a second line item. Your base rate buys production: concepting, filming, editing, captions, delivery. Usage rights buy distribution: the right to put the finished video behind paid spend, on a product page, in an email flow, or on a retail screen. The longer and wider that distribution runs, the more the license costs — which is where tiered multipliers come in.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">Licenses vary on three axes: length (30 days to perpetual), media (paid ads, organic social, owned channels), and territory (one market to worldwide). Length is the axis deals are actually negotiated on, so it's the one this guide prices — in three tiers.</p>
+
+      <h2 class="mt-10 text-xl font-bold">The Usage Rights Multiplier Table, by License Length</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">How much do usage rights cost? Add +30–50% of your base rate for a 30-day license, +50–100% for a 90-day to 12-month license, and +100% or more for a buyout — 2026 figures based on aggregated public benchmarks.</p>
+      <div class="mt-4 overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-slate-100">
+              <th class="px-3 py-2 text-left font-semibold">License tier</th>
+              <th class="px-3 py-2 text-left font-semibold">What the brand gets</th>
+              <th class="px-3 py-2 text-left font-semibold">Uplift on your base rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">30-day license</td>
+              <td class="px-3 py-2 text-slate-600">Runs your video in its ads and channels for 30 days</td>
+              <td class="px-3 py-2 font-semibold">+30–50%</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">90-day to 12-month license</td>
+              <td class="px-3 py-2 text-slate-600">Same rights, sustained for a quarter up to a full year</td>
+              <td class="px-3 py-2 font-semibold">+50–100%</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">Buyout</td>
+              <td class="px-3 py-2 text-slate-600">Unlimited use — typically perpetual, all media</td>
+              <td class="px-3 py-2 font-semibold">+100%+</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 leading-relaxed text-slate-600">Read as a single multiplier, a deal sold with usage rights lands between ×1.25 and ×2.0 of your base rate. That's the band the <a href="/" class="text-indigo-600 hover:underline">UGC rate calculator</a> prices with; the three tiers above are that band split by license length.</p>
+
+      <h3 class="mt-8 font-bold">30-Day License: +30–50%</h3>
+      <p class="mt-2 leading-relaxed text-slate-600">The 30-day tier exists because brands test. Paid social teams want two to four weeks of runtime before they know whether a creative works, and "we just want to run it in some ads" is a request for exactly this license. It's the entry tier, not a freebie: a 30-day license turns a $150 base video into a $195–225 quote ($150 × 1.3–1.5).</p>
+
+      <h3 class="mt-8 font-bold">90-Day to 12-Month License: +50–100%</h3>
+      <p class="mt-2 leading-relaxed text-slate-600">This is where most deals close, because 90 days is the default window performance brands ask for — and extensions past a quarter climb toward the top of the band. A brand requesting "organic and paid usage through the end of the year" is requesting a 12-month product worth up to double your base rate. When a creative keeps performing, the license is the part that keeps paying. Price it that way.</p>
+
+      <h3 class="mt-8 font-bold">Buyout: +100%+</h3>
+      <p class="mt-2 leading-relaxed text-slate-600">A buyout covers effectively everything: unlimited duration, all media, often the right to edit and sublicense. The floor is +100% — the rights should cost at least as much as the production, because you are selling the commercial life of the video. When the contract says perpetual, worldwide, sublicensable, quote above the floor. Once a buyout is signed, the video never earns you money again; the number you write is the last number you get.</p>
+
+      <h2 class="mt-10 text-xl font-bold">Exclusivity Is a Separate Charge: +25–100%</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Exclusivity adds +25–100% of your base rate, on top of the usage rights fee — because it's a different product. A usage license governs what the brand can do with your video. Exclusivity governs what you can do next.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">A standard license doesn't stop you from creating for the brand's competitors. Exclusivity does: for an agreed window, usually 30 or 90 days, you agree not to create for competing products in the category. The brand is paying for your absence from the market — an opportunity cost you price, not a clause you absorb.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">Two rules keep the line item clean:</p>
+      <ul class="mt-3 list-disc space-y-2 pl-6 leading-relaxed text-slate-600">
+        <li><strong>Exclusivity stacks, it doesn't substitute.</strong> A 12-month license with category exclusivity quotes as the license multiplier plus the exclusivity premium — base × 1.75 for the license, plus base × 0.5 for exclusivity at mid-band, in the worked examples below.</li>
+        <li><strong>Unpriced exclusivity doesn't exist.</strong> "Can you hold off on other skincare brands for a bit?" is a request worth +25–100% of your base rate. If it isn't in the contract with a number attached, the answer is no.</li>
+      </ul>
+
+      <h2 class="mt-10 text-xl font-bold">Whitelisting Is Not Usage Rights</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Whitelisting is not a longer license — it's the brand running paid ads through your social handle, and it's billed as a monthly fee: $100–500/mo per platform, on top of your video rate. Conflate the two and one of them ends up free.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">The mechanics are different products. With usage rights, the brand takes your video file and runs it from its own ad accounts — your footage, its identity. With whitelisting, the brand runs ads from your handle: an auth code on TikTok, partnership ads on Instagram. The ad appears to come from you, your face and your handle under the "sponsored" label — and that creator identity is exactly what performs, which is why brands rent it monthly, for as long as the campaign runs.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">Three consequences when you quote:</p>
+      <ol class="mt-3 list-decimal space-y-2 pl-6 leading-relaxed text-slate-600">
+        <li><strong>It's recurring.</strong> $100–500/mo per platform, for the life of the campaign — a monthly re-bill, not a one-time add-on.</li>
+        <li><strong>It's per platform.</strong> TikTok and Instagram whitelisting are two fees, not one.</li>
+        <li><strong>It stacks on a full deal.</strong> Production, usage rights, whitelisting is a normal three-line quote: a $250 base video with a 90-day license is $250 × 1.5 = $375 one-time, plus $200/mo × 2 platforms = $400/mo recurring.</li>
+      </ol>
+
+      <h2 class="mt-10 text-xl font-bold">Usage Rights Pricing: Three Worked Examples</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">How do the multipliers become a quote? Below are three deals at three experience levels — $150, $250, and $400 base rates, all inside the 2026 benchmark bands that run from $75 to $1,000+ across beginner to premium — with every multiplication shown.</p>
+
+      <h3 class="mt-8 font-bold">Example 1 — intermediate creator, $250 base (band $150–350)</h3>
+      <p class="mt-2 leading-relaxed text-slate-600">One video for a Q4 paid social push.</p>
+      <div class="mt-4 overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-slate-100">
+              <th class="px-3 py-2 text-left font-semibold">License</th>
+              <th class="px-3 py-2 text-left font-semibold">Math</th>
+              <th class="px-3 py-2 text-left font-semibold">Quote</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">30-day</td>
+              <td class="px-3 py-2 text-slate-600">$250 × 1.4 (+40%)</td>
+              <td class="px-3 py-2 font-semibold">$350</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">90-day</td>
+              <td class="px-3 py-2 text-slate-600">$250 × 1.5 (+50%)</td>
+              <td class="px-3 py-2 font-semibold">$375</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">Buyout</td>
+              <td class="px-3 py-2 text-slate-600">$250 × 2.0 (+100%)</td>
+              <td class="px-3 py-2 font-semibold">$500</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="mt-8 font-bold">Example 2 — beginner creator, $150 base (band $75–250)</h3>
+      <p class="mt-2 leading-relaxed text-slate-600">A first rights deal, with an exclusivity request attached.</p>
+      <ul class="mt-3 list-disc space-y-2 pl-6 leading-relaxed text-slate-600">
+        <li>30-day license: $150 × 1.3 (+30%) = <strong>$195</strong></li>
+        <li>6-month license: $150 × 1.6 (+60%) = <strong>$240</strong></li>
+        <li>Buyout with category exclusivity: $150 × 2.0 (+100%) = $300, plus $150 × 0.5 (+50% exclusivity) = $75 → <strong>$375 all-in</strong>, the same as $150 × 2.5 in a single multiplier.</li>
+      </ul>
+
+      <h3 class="mt-8 font-bold">Example 3 — advanced creator, $400 base (band $250–600)</h3>
+      <p class="mt-2 leading-relaxed text-slate-600">A 12-month license with a 90-day exclusivity window.</p>
+      <ul class="mt-3 list-disc space-y-2 pl-6 leading-relaxed text-slate-600">
+        <li>12-month license: $400 × 1.75 (+75%) = <strong>$700</strong></li>
+        <li>Exclusivity, 90 days: $400 × 0.25 (+25%) = <strong>$100</strong></li>
+        <li>Full quote: $700 + $100 = <strong>$800</strong> — the license alone ($700) already sits high in the ×1.25–2.0 with-usage-rights band.</li>
+      </ul>
+      <p class="mt-3 leading-relaxed text-slate-600">Any of the three quotes can carry whitelisting on top, at $100–500/mo per platform: two platforms at a $200/mo midpoint is $400/mo recurring, for as long as the ads stay live.</p>
+
+      <h2 class="mt-10 text-xl font-bold">Price by Multiplier, Not by a Flat Rate Card</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Why tiers instead of one number? Because most rate cards online quote a flat price for "a video with usage rights" — a single figure that silently assumes your experience level, the license length, and the exclusivity terms, even though base rates alone span $75–1,000+ and the license uplift spans +30–100%+. Two creators quoting from the same card are not selling the same deal; at least one of them is mispriced.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">Multiplier pricing keeps every variable separate and negotiable. Your base rate reflects your tier — $75–250 beginner, $150–350 intermediate, $250–600 advanced, $500–1,000 premium. The license tier sets the multiplier. Exclusivity (+25–100%) and whitelisting ($100–500/mo per platform) attach as their own lines. Every clause in a brand's brief maps to a number you can defend in a reply email.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">That's the model behind the <a href="/" class="text-indigo-600 hover:underline">UGC rate calculator</a> on UGC Toolkit: it asks what the brand gets — content type, usage rights, experience — before it ever asks about followers, because rights are where the price moves. The multiplication is the same one you just did by hand, built on the same public bands.</p>
+
+      <h2 class="mt-10 text-xl font-bold">Negotiation Notes: Getting the Tier You Quoted</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">How do you hold a +30–100%+ uplift in a real thread? A few habits that hold up:</p>
+      <ul class="mt-3 list-disc space-y-2 pl-6 leading-relaxed text-slate-600">
+        <li><strong>Answer rights questions with a number, not "sure."</strong> Even the entry tier (+30–50%) beats the free license most creators hand over when a brand asks "can we use this in our ads?"</li>
+        <li><strong>Re-quote repeat clients every 90 days.</strong> Your rate should grow with your portfolio, and the 90-day renewal is the natural moment — the brand already knows the creative performs.</li>
+        <li><strong>Read buyout language closely.</strong> "In perpetuity, in all media, worldwide, with the right to modify and sublicense" is a full transfer. Quote above +100%, and if they plan to sublicense, put a floor in writing.</li>
+        <li><strong>Put all five terms in the contract:</strong> license length, media, territory, exclusivity window, whitelisting platforms and monthly fee. A tier that isn't written down is a tier you gave away.</li>
+      </ul>
+
+      <h2 class="mt-10 text-xl font-bold">Price Your Next Deal in Under a Minute</h2>
+      <div class="mt-4 rounded-lg border border-indigo-200 bg-indigo-50 p-6">
+        <p class="font-bold">Price your next deal</p>
+        <p class="mt-2 leading-relaxed text-slate-600">You now have the three tiers (+30–50% / +50–100% / +100%+), the exclusivity stack (+25–100%), and the whitelisting split ($100–500/mo per platform) — the same structure the <a href="/" class="font-semibold text-indigo-600 hover:underline">UGC rate calculator</a> uses to price a deal. Pick your experience tier, choose the content type with usage rights, and read your per-video band off the result panel. Then send the brand a number, not a range.</p>
+      </div>
+      <p class="mt-4 leading-relaxed text-slate-600">New to pricing UGC overall? Start with the <a href="/blog/how-much-to-charge-ugc" class="text-indigo-600 hover:underline">complete pricing guide — How Much to Charge for UGC in 2026</a>: it covers base rates for all four experience tiers, content-type multipliers, and influencer posting add-ons before usage rights enter the picture.</p>
+      <p class="mt-6 text-sm italic leading-relaxed text-slate-500">Figures based on aggregated public benchmarks — platform data, job posts, and published rate sheets — as of 2026-11. Estimates, not financial advice.</p>
+
+      <section id="faq">
+        <h2 class="mt-10 text-xl font-bold">Frequently Asked Questions</h2>
+        <h3 class="mt-6 font-bold">How much should I charge for a 30-day usage rights license?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">Add +30–50% of your base rate. On a $250 base video, that is $250 × 1.3–1.5 = $325–375 for the video plus the 30-day license.</p>
+        <h3 class="mt-6 font-bold">How much should I charge for a usage rights buyout?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">At least +100% of your base rate — double the video price. A $250 base becomes $250 × 2.0 = $500, and more if the contract grants perpetual, worldwide, sublicensable rights.</p>
+        <h3 class="mt-6 font-bold">How much extra is exclusivity in a UGC deal?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">+25–100% of your base rate, charged on top of the usage rights fee. Exclusivity restricts which competing brands you can work with for a window (usually 30 or 90 days), so it prices separately from the license itself.</p>
+        <h3 class="mt-6 font-bold">Is whitelisting the same as usage rights?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">No. Usage rights license your content — the brand runs your video from its own ad accounts. Whitelisting lets the brand run paid ads from your social handle, billed monthly at $100–500/mo per platform on top of your video rate.</p>
+        <h3 class="mt-6 font-bold">What multiplier should I apply to a video sold with usage rights?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">×1.25–2.0 of your base rate, depending on license length: a 30-day license sits at the low end (+30–50%), 90-day to 12-month deals mid-band (+50–100%), and buyouts at ×2.0 or higher (+100%+).</p>
+      </section>
+    </main>
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto max-w-3xl px-4 py-6 text-sm text-slate-600">
+        <!-- 页脚与主站一致：免责声明 + Not financial advice + 联盟披露 + 合规链接组（+ Pricing Guide） -->
+        <p>Estimates based on community data &mdash; verify against your niche. Not financial advice.</p>
+        <p class="mt-2">Some links on this site may be affiliate links. If you buy through them, we may earn a commission at no extra cost to you.</p>
+        <nav class="mt-3 flex flex-wrap gap-4" aria-label="Legal">
+          <a href="/" class="text-indigo-600 hover:underline">Calculator</a>
+          <a href="/blog/how-much-to-charge-ugc" class="text-indigo-600 hover:underline">Pricing Guide</a>
+          <a href="/privacy" class="text-indigo-600 hover:underline">Privacy Policy</a>
+          <a href="/terms" class="text-indigo-600 hover:underline">Terms of Service</a>
+          <a href="/privacy#ccpa" class="text-indigo-600 hover:underline">Do Not Sell or Share My Personal Information</a>
+        </nav>
+        <p class="mt-3">&copy; 2026 UGC Toolkit</p>
+      </div>
+    </footer>
+  </body>
+</html>
