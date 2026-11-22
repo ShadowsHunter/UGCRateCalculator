@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Negotiate UGC Rates: 4 Scripts That Ask for More | UGC Toolkit</title>
+    <meta name="description" content="Learn to negotiate UGC rates with 4 word-for-word scripts: higher per-video rates, usage rights add-ons, whitelisting fees, and polite declines." />
+    <meta name="robots" content="index, follow" />
+    <!-- 自指 canonical 用 clean URL：Cloudflare Pages 将 /blog/negotiate-ugc-rates.html 301 → clean URL -->
+    <link rel="canonical" href="https://ugc-toolkit.com/blog/negotiate-ugc-rates" />
+    <!-- 同款 emoji favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧮</text></svg>" />
+    <link rel="stylesheet" href="/src/assets/content.css" />
+
+    <!-- ===== Open Graph ===== -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="UGC Toolkit" />
+    <meta property="og:url" content="https://ugc-toolkit.com/blog/negotiate-ugc-rates" />
+    <meta property="og:title" content="How to Negotiate UGC Rates: 4 Scripts That Ask for More | UGC Toolkit" />
+    <meta property="og:description" content="Learn to negotiate UGC rates with 4 word-for-word scripts: higher per-video rates, usage rights add-ons, whitelisting fees, and polite declines." />
+    <meta property="og:image" content="https://ugc-toolkit.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="How to negotiate UGC rates — four word-for-word scripts and a follow-up cadence" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- ===== Twitter Card ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Negotiate UGC Rates: 4 Scripts That Ask for More | UGC Toolkit" />
+    <meta name="twitter:description" content="Learn to negotiate UGC rates with 4 word-for-word scripts: higher per-video rates, usage rights add-ons, whitelisting fees, and polite declines." />
+    <meta name="twitter:image" content="https://ugc-toolkit.com/og-image.png" />
+
+    <!-- ===== FAQPage JSON-LD（Answer 与页面可见 FAQ 文本逐字一致） ===== -->
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How do I negotiate UGC rates without losing the deal?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Negotiate the scope, not the price. Keep your per-video rate at your experience tier's benchmark ($75–250 for beginners, up to $500–1,000 for premium creators), and flex the surrounding terms instead: fewer videos, a shorter usage window, or a later timeline. Brands that walk away over a market-aligned rate were paying below the market." } },
+        { "@type": "Question", "name": "What do I say when a brand says the budget is fixed?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Accept the number and move the rights tier instead of your base rate: drop a 12-month license to a 90-day or 30-day window. A $200 base with 30-day usage at +30% totals $260 versus $300 at 90 days — the brand saves real money and your rate card stays intact." } },
+        { "@type": "Question", "name": "Should I negotiate my base rate or my usage rights?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Your usage rights, almost always. Usage rights are a separate line item — 30-day paid usage adds +30–50%, 90 days to 12 months adds +50–100%, and a full buyout adds +100% or more — while your base rate should only move when your experience tier moves. Trading license length keeps the deal alive without resetting what you're worth per video." } },
+        { "@type": "Question", "name": "How often should I follow up after sending a quote?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Follow up every 3–5 business days, with a maximum of two follow-ups per deal. Each one should add something new — a finished piece, an idea, a number — and stay in the original email thread. After two replies-worth of silence, close politely and re-approach the next quarter with new work." } }
+      ] }
+    </script>
+
+    <!-- ===== Article JSON-LD ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How to Negotiate UGC Rates: Scripts for Asking for More",
+      "description": "Learn to negotiate UGC rates with 4 word-for-word scripts: higher per-video rates, usage rights add-ons, whitelisting fees, and polite declines.",
+      "datePublished": "2026-11-22",
+      "dateModified": "2026-11-22",
+      "inLanguage": "en",
+      "image": "https://ugc-toolkit.com/og-image.png",
+      "publisher": { "@type": "Organization", "name": "UGC Toolkit" },
+      "author": { "@type": "Organization", "name": "UGC Toolkit" },
+      "mainEntityOfPage": "https://ugc-toolkit.com/blog/negotiate-ugc-rates"
+    }
+    </script>
+
+    <!-- ===== GA4 延迟加载（spec §10 + perf：TBT 优化） =====
+         dataLayer/gtag 队列同步直出（延迟前的 gtag() 调用进队列不丢失）；
+         外部 gtag.js 改为首次交互（pointerdown/keydown/wheel）或 5s 兜底后注入，幂等只加载一次 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      (function () {
+        var EVENTS = ['pointerdown', 'keydown', 'wheel'];
+        var done = false;
+        var timer = 0;
+        function loadGA4() {
+          if (done) return;
+          done = true;
+          clearTimeout(timer);
+          EVENTS.forEach(function (n) { removeEventListener(n, loadGA4); });
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-52NE0FELYX';
+          document.head.appendChild(s);
+          gtag('js', new Date());
+          gtag('config', 'G-52NE0FELYX');
+        }
+        timer = setTimeout(loadGA4, 5000);
+        EVENTS.forEach(function (n) { addEventListener(n, loadGA4, { once: true, passive: true }); });
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
+    <!-- 纯 HTML+CSS 内容页（C-PAGE-TEMPLATE-B2@1 骨架），无业务 JS；仅 GA4 统计（延迟加载，见 head 内联脚本） -->
+    <header class="border-b border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-3xl items-center justify-between px-4 py-4">
+        <span class="text-lg font-bold">UGC Toolkit</span>
+        <a href="/" class="text-indigo-600 hover:underline">&larr; Back to calculator</a>
+      </div>
+    </header>
+    <main class="mx-auto max-w-3xl px-4 py-10">
+      <h1 class="text-3xl font-bold">How to Negotiate UGC Rates: Scripts for Asking for More</h1>
+      <p class="mt-2 text-sm text-slate-600">Last updated: 2026-11</p>
+
+      <p class="mt-4 leading-relaxed text-slate-600">Most UGC creators don't lose money while filming — they lose it in the reply to a brand's email. One sentence ("Okay, I can come down a little") can quietly cut 20–30% off a deal, and every future negotiation with that client inherits the discount. Here is how to negotiate UGC rates without winging it: a floor number to stand on, four word-for-word scripts, answers to the lines brands run on their side, and a follow-up cadence that closes deals instead of chasing them.</p>
+
+      <h2 class="mt-10 text-xl font-bold">Anchor your floor before the negotiation starts</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Before you reply to any offer, set your floor from your experience tier — not from the brand's budget, and not from what feels polite. That one number is what keeps every script in this guide calm instead of defensive.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">Your floor comes from market data. Based on aggregated public benchmarks, UGC creators charge the following per edited video:</p>
+      <div class="mt-4 overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-slate-100">
+              <th class="px-3 py-2 text-left font-semibold">Experience tier</th>
+              <th class="px-3 py-2 text-left font-semibold">Typical base rate per video</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">Beginner</td>
+              <td class="px-3 py-2 text-slate-600">$75–250</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">Intermediate</td>
+              <td class="px-3 py-2 text-slate-600">$150–350</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">Advanced</td>
+              <td class="px-3 py-2 text-slate-600">$250–600</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">Premium</td>
+              <td class="px-3 py-2 text-slate-600">$500–1,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 leading-relaxed text-slate-600">Three rules for using that table:</p>
+      <ul class="mt-3 list-disc space-y-2 pl-6 leading-relaxed text-slate-600">
+        <li><strong>Your floor is the low end of your tier.</strong> A beginner quoting $75–250 per video should not accept $50 for the same scope — the benchmark doesn't support it.</li>
+        <li><strong>Move up a tier when your results justify it.</strong> The day you have repeat clients and a solid portfolio, your floor moves from $75 to $150 without filming a single extra video.</li>
+        <li><strong>Quote the full package, not the bare video.</strong> Content type and usage rights change the number as much as experience does — run your exact scope through the free <a href="/" class="text-indigo-600 hover:underline">UGC rate calculator</a> before you send any number.</li>
+      </ul>
+      <p class="mt-3 leading-relaxed text-slate-600">Notice the asymmetry working in your favor: your number was built from 300+ community data points. Their counteroffer was built from a budget memo. When you negotiate UGC rates from a sourced floor, you're not being difficult — you're being the better-prepared side of the table.</p>
+
+      <h2 class="mt-10 text-xl font-bold">Four scripts that negotiate for you</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">These four scripts cover the conversations that decide most of your income: asking for a higher per-video rate, trading usage rights instead of accepting a discount, quoting whitelisting as a monthly fee, and declining a low offer without burning the bridge. Copy them, swap the [Placeholders], and send.</p>
+
+      <h3 class="mt-8 font-bold">Script 1 — Asking for a higher per-video rate</h3>
+      <p class="mt-2 leading-relaxed text-slate-600"><strong>When:</strong> your first quote for a brief, or a re-quote to an existing client (review your rates roughly every 90 days — your rate should grow with your portfolio).</p>
+      <pre class="mt-4 overflow-x-auto rounded-lg bg-slate-100 p-4 font-mono text-sm leading-relaxed">Thanks for the brief — it's a strong fit for my [Niche] work.
+
+My rate for this scope is $[Your Rate] per video, which covers
+[Number] edited, ready-to-post videos with 30-day organic usage on
+your channels. That number sits in the standard range for [Niche]
+creators at my experience level, based on aggregated public
+benchmarks — happy to walk you through the breakdown.
+
+If it lands above budget, tell me the ceiling and I'll adjust the
+scope so the per-video rate holds.</pre>
+      <p class="mt-3 leading-relaxed text-slate-600"><strong>Why it works:</strong> the number arrives with a source attached, which makes it a fact rather than a feeling — and the last line offers to flex the scope, never the price.</p>
+
+      <h3 class="mt-8 font-bold">Script 2 — Trade usage rights up, never your base rate down</h3>
+      <p class="mt-2 leading-relaxed text-slate-600"><strong>When:</strong> a brand likes your quote but asks you to come down. Don't discount — sell a smaller license. Usage rights are a separate line item: 30-day paid usage runs +30–50%, 90 days to 12 months runs +50–100%, and a full buyout is +100% or more (exclusivity is priced separately, +25–100% on top).</p>
+      <pre class="mt-4 overflow-x-auto rounded-lg bg-slate-100 p-4 font-mono text-sm leading-relaxed">Thanks for being straight about the budget — that genuinely helps.
+
+My rate covers production and 30-day organic use on your channels.
+If $[Lower Number] is the ceiling, let's right-size the license
+instead of the price: drop the 12-month license to a 30-day paid
+license at +30%, or keep [Number] videos instead of [Number + 1].
+Both versions stay priced at my per-video rate.
+
+Which trade fits your numbers better?</pre>
+      <p class="mt-3 leading-relaxed text-slate-600"><strong>The arithmetic, so you can say it with a straight face:</strong> a $200 base with 90-day usage at the low end of the band is $200 + 50% = $300 total. Dropping to a 30-day license at +30% makes it $260 — cheaper for the brand, and your per-video price never moved. You hand them a menu with prices on it, and both options still pay you at your rate.</p>
+
+      <h3 class="mt-8 font-bold">Script 3 — Quoting whitelisting as a monthly fee</h3>
+      <p class="mt-2 leading-relaxed text-slate-600"><strong>When:</strong> the brand wants to run your video as paid ads from your handle (Spark Ads–style whitelisting). This is not a per-video line item — it's a monthly license, typically $100–500/mo per platform.</p>
+      <pre class="mt-4 overflow-x-auto rounded-lg bg-slate-100 p-4 font-mono text-sm leading-relaxed">Happy to set up whitelisting — it's usually when this content
+performs best.
+
+One thing to align on: whitelisting is licensed monthly and billed
+separately from the video itself. It runs $100–500/mo per platform,
+based on aggregated public benchmarks. If you're running both TikTok
+and Instagram, that's two monthly licenses.
+
+If it helps, start with the platform where your ad spend is
+concentrated, and add the second after the first month's numbers.</pre>
+      <p class="mt-3 leading-relaxed text-slate-600"><strong>Why it works:</strong> whitelisting is the same video, recurring revenue — the filming is done, and the license renews. Per-platform framing (two platforms = two fees) is the standard structure, and offering a staggered start makes the bigger number easier to say yes to.</p>
+
+      <h3 class="mt-8 font-bold">Script 4 — Politely declining a low offer</h3>
+      <p class="mt-2 leading-relaxed text-slate-600"><strong>When:</strong> the offer is below your floor and the scope won't stretch. A polite no protects your rate card and leaves the door open.</p>
+      <pre class="mt-4 overflow-x-auto rounded-lg bg-slate-100 p-4 font-mono text-sm leading-relaxed">I appreciate you reaching out — [Product] is genuinely something
+I'd enjoy making content for.
+
+At $[Offer], I'd be working below the standard range for this
+deliverable, so I'll pass this round. If a budget opens up for
+[Scope] at $[Floor Rate]+ per video, I'd love to be considered —
+my portfolio is here: [Portfolio Link].
+
+Either way, thanks for making [One Thing You Like About The Brand].</pre>
+      <p class="mt-3 leading-relaxed text-slate-600"><strong>Why it works:</strong> the decline is final but warm, the number that would work is stated plainly, and the true compliment at the end signals zero desperation — which is exactly what brands screen for when they come back later. Some will. A brand that returns after a polite no usually returns at your rate.</p>
+
+      <p class="mt-4 leading-relaxed text-slate-600">All four scripts ship word-for-word in the <a href="https://ugctoolkit.gumroad.com/l/jlfmgx" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">UGC Pitch Template Pack — $9</a>, alongside nine more pitch, follow-up, and negotiation templates and a rate card pre-loaded with the same 2026 community data as the calculator.</p>
+
+      <h2 class="mt-10 text-xl font-bold">When brands push back: three lines and the answers</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Most pushback is a script on their side too. Answer the frame, not the feeling — and never trade your base rate for the comfort of agreement.</p>
+      <div class="mt-4 overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-slate-100">
+              <th class="px-3 py-2 text-left font-semibold">The line</th>
+              <th class="px-3 py-2 text-left font-semibold">What it usually means</th>
+              <th class="px-3 py-2 text-left font-semibold">Your move</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">"Our budget is fixed."</td>
+              <td class="px-3 py-2 text-slate-600">The number, not the scope, is locked.</td>
+              <td class="px-3 py-2 text-slate-600">Move the rights tier down, not the base rate: 12-month → 90-day → 30-day usage. A $200 base with 30-day usage at +30% is $260 — a real discount for them, an intact rate card for you.</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">"Can you include the usage rights for free?"</td>
+              <td class="px-3 py-2 text-slate-600">They're testing whether the license is a real line item.</td>
+              <td class="px-3 py-2 text-slate-600">It is: production pays for the video, the license pays for distribution. Offer the smallest rung — 30-day paid usage at +30% — never a free bundle.</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">"Another creator quoted half your rate."</td>
+              <td class="px-3 py-2 text-slate-600">Possibly true, possibly a tactic; either way it's a different scope.</td>
+              <td class="px-3 py-2 text-slate-600">"Their quote likely covers a different scope — mine covers [Number] edited videos plus 30-day usage, priced from community benchmarks. If you share the deliverables list, I'll tell you where the gap is."</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 leading-relaxed text-slate-600">The pattern in all three: you never argue about whether you're worth it. You redirect to scope, license length, and data — the parts of the deal you can price line by line.</p>
+
+      <h2 class="mt-10 text-xl font-bold">The follow-up cadence that closes deals</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Follow up every 3–5 business days, cap it at two follow-ups, then move on. Silence after a quote usually means a buried inbox, not a no — brands see hundreds of creator emails a week, and the follow-up is how yours resurfaces.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">Four rules that keep you on the right side of persistent:</p>
+      <ul class="mt-3 list-disc space-y-2 pl-6 leading-relaxed text-slate-600">
+        <li><strong>Stay in the original thread.</strong> Your quote should sit one scroll away from your follow-up, not behind a new subject line.</li>
+        <li><strong>Every follow-up adds something new</strong> — a finished spec piece, an idea for their next campaign, a number. "Just checking in" adds nothing and reads as pressure.</li>
+        <li><strong>Two follow-ups maximum, one channel at a time.</strong> If you emailed, don't also DM the same day.</li>
+        <li><strong>Close politely, then log the brand.</strong> A closed loop isn't a dead lead: re-approach next quarter with new work and a new hook. Warm re-approaches convert better than fresh cold outreach, at a fraction of the effort.</li>
+      </ul>
+      <p class="mt-3 leading-relaxed text-slate-600">And when a client signs: put the re-quote date in your calendar. Repeat clients who haven't heard from you in 90 days should hear your new rate before they hear your availability.</p>
+
+      <h2 class="mt-10 text-xl font-bold">Everything above, pre-written, for $9</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">You now know how to negotiate UGC rates — the pack has you do it without writing a word from scratch. The UGC Pitch Template Pack contains 13 pitch, follow-up &amp; negotiation templates + a data-backed rate card — $9 — including word-for-word versions of all four scripts above, four cold pitch emails, two follow-up emails with the cadence table, and a 12-point contract red flags checklist.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">The rate card arrives pre-loaded with 2026 community pricing data — the same data behind the free calculator — so when a brand asks where your number came from, your answer is a source, not a shrug.</p>
+
+      <!-- GUMROAD CTA（按钮式）：CTA_SOCIAL_PROOF 口径 -->
+      <div class="mt-6 rounded-lg border border-indigo-200 bg-indigo-50 p-6 text-center">
+        <a href="https://ugctoolkit.gumroad.com/l/jlfmgx" target="_blank" rel="noopener" class="inline-block rounded-lg bg-indigo-600 px-6 py-3 font-semibold text-white hover:bg-indigo-700">Get the UGC Pitch Template Pack — $9</a>
+        <p class="mt-3 text-sm text-slate-600">13 pitch, follow-up &amp; negotiation templates + a data-backed rate card — $9.</p>
+      </div>
+
+      <p class="mt-6 leading-relaxed text-slate-600">For the emails that start these negotiations, the <a href="/blog/ugc-pitch-template" class="text-indigo-600 hover:underline">UGC pitch template guide</a> walks through the cold pitch line by line. For every rate behind the scripts — base rates, rights multipliers, whitelisting fees — the <a href="/blog/how-much-to-charge-ugc" class="text-indigo-600 hover:underline">complete pricing guide on how much to charge for UGC</a> covers the full landscape. And when you're back in a live negotiation, run the exact scope through the <a href="/" class="text-indigo-600 hover:underline">UGC rate calculator</a> before you hit send.</p>
+      <p class="mt-6 text-sm italic leading-relaxed text-slate-500">Figures based on aggregated public benchmarks — platform data, job posts, and published rate sheets — as of 2026-11. Estimates, not financial advice.</p>
+
+      <section id="faq">
+        <h2 class="mt-10 text-xl font-bold">Frequently Asked Questions</h2>
+        <h3 class="mt-6 font-bold">How do I negotiate UGC rates without losing the deal?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">Negotiate the scope, not the price. Keep your per-video rate at your experience tier's benchmark ($75–250 for beginners, up to $500–1,000 for premium creators), and flex the surrounding terms instead: fewer videos, a shorter usage window, or a later timeline. Brands that walk away over a market-aligned rate were paying below the market.</p>
+        <h3 class="mt-6 font-bold">What do I say when a brand says the budget is fixed?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">Accept the number and move the rights tier instead of your base rate: drop a 12-month license to a 90-day or 30-day window. A $200 base with 30-day usage at +30% totals $260 versus $300 at 90 days — the brand saves real money and your rate card stays intact.</p>
+        <h3 class="mt-6 font-bold">Should I negotiate my base rate or my usage rights?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">Your usage rights, almost always. Usage rights are a separate line item — 30-day paid usage adds +30–50%, 90 days to 12 months adds +50–100%, and a full buyout adds +100% or more — while your base rate should only move when your experience tier moves. Trading license length keeps the deal alive without resetting what you're worth per video.</p>
+        <h3 class="mt-6 font-bold">How often should I follow up after sending a quote?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">Follow up every 3–5 business days, with a maximum of two follow-ups per deal. Each one should add something new — a finished piece, an idea, a number — and stay in the original email thread. After two replies-worth of silence, close politely and re-approach the next quarter with new work.</p>
+      </section>
+    </main>
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto max-w-3xl px-4 py-6 text-sm text-slate-600">
+        <!-- 页脚与主站一致：免责声明 + Not financial advice + 联盟披露 + 合规链接组（+ Pricing Guide） -->
+        <p>Estimates based on community data &mdash; verify against your niche. Not financial advice.</p>
+        <p class="mt-2">Some links on this site may be affiliate links. If you buy through them, we may earn a commission at no extra cost to you.</p>
+        <nav class="mt-3 flex flex-wrap gap-4" aria-label="Legal">
+          <a href="/" class="text-indigo-600 hover:underline">Calculator</a>
+          <a href="/blog/how-much-to-charge-ugc" class="text-indigo-600 hover:underline">Pricing Guide</a>
+          <a href="/privacy" class="text-indigo-600 hover:underline">Privacy Policy</a>
+          <a href="/terms" class="text-indigo-600 hover:underline">Terms of Service</a>
+          <a href="/privacy#ccpa" class="text-indigo-600 hover:underline">Do Not Sell or Share My Personal Information</a>
+        </nav>
+        <p class="mt-3">&copy; 2026 UGC Toolkit</p>
+      </div>
+    </footer>
+  </body>
+</html>

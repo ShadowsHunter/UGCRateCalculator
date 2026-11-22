@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UGC View Bonus Deals Explained: $100 at 100K Views | UGC Toolkit</title>
+    <meta name="description" content="UGC view bonus deals explained: the standard ladder pays $100 at 100K, $250 at 250K, and $500 at 500K views - on top of your base rate. Math inside." />
+    <meta name="robots" content="index, follow" />
+    <!-- 自指 canonical 用 clean URL：Cloudflare Pages 将 /blog/ugc-view-bonus-deals.html 301 → clean URL -->
+    <link rel="canonical" href="https://ugc-toolkit.com/blog/ugc-view-bonus-deals" />
+    <!-- 同款 emoji favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧮</text></svg>" />
+    <link rel="stylesheet" href="/src/assets/content.css" />
+
+    <!-- ===== Open Graph ===== -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="UGC Toolkit" />
+    <meta property="og:url" content="https://ugc-toolkit.com/blog/ugc-view-bonus-deals" />
+    <meta property="og:title" content="UGC View Bonus Deals Explained: $100 at 100K Views | UGC Toolkit" />
+    <meta property="og:description" content="UGC view bonus deals explained: the standard ladder pays $100 at 100K, $250 at 250K, and $500 at 500K views - on top of your base rate. Math inside." />
+    <meta property="og:image" content="https://ugc-toolkit.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="UGC view bonus deals — the standard ladder and worked math examples" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- ===== Twitter Card ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="UGC View Bonus Deals Explained: $100 at 100K Views | UGC Toolkit" />
+    <meta name="twitter:description" content="UGC view bonus deals explained: the standard ladder pays $100 at 100K, $250 at 250K, and $500 at 500K views - on top of your base rate." />
+    <meta name="twitter:image" content="https://ugc-toolkit.com/og-image.png" />
+
+    <!-- ===== FAQPage JSON-LD（Answer 与页面可见 FAQ 文本逐字一致） ===== -->
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is a UGC view bonus?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A performance bonus paid on top of your base rate when a video you delivered hits an agreed view milestone, usually after the brand puts paid spend behind it. The standard ladder pays $100 at 100K views, $250 at 250K, and $500 at 500K." } },
+        { "@type": "Question", "name": "How much is a view bonus at 100K views?",
+          "acceptedAnswer": { "@type": "Answer", "text": "$100, based on aggregated public benchmarks. At 250K views the standard bonus is $250, and at 500K views it's $500." } },
+        { "@type": "Question", "name": "Is a view bonus paid instead of my base rate?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The bonus is an add-on. Your base rate pays for production and is guaranteed; the view bonus is upside that triggers if the video performs. Never swap base pay for performance pay at the same total." } },
+        { "@type": "Question", "name": "How are views counted for a view bonus?",
+          "acceptedAnswer": { "@type": "Answer", "text": "However your contract says. Define which dashboard counts, over what window, whether milestones stack, and whether bonuses are per video or per campaign — the brand's ad manager and the platform's public counter often disagree." } },
+        { "@type": "Question", "name": "Do I need followers to earn a view bonus?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The video usually runs from the brand's ad account as a Spark Ad or partnership ad, so the milestone measures the campaign's performance, not your reach." } }
+      ] }
+    </script>
+
+    <!-- ===== Article JSON-LD ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "UGC View Bonus Deals Explained: $100 at 100K Views and Other Standard Structures",
+      "description": "UGC view bonus deals explained: the standard ladder pays $100 at 100K, $250 at 250K, and $500 at 500K views - on top of your base rate. Math inside.",
+      "datePublished": "2026-11-22",
+      "dateModified": "2026-11-22",
+      "inLanguage": "en",
+      "image": "https://ugc-toolkit.com/og-image.png",
+      "publisher": { "@type": "Organization", "name": "UGC Toolkit" },
+      "author": { "@type": "Organization", "name": "UGC Toolkit" },
+      "mainEntityOfPage": "https://ugc-toolkit.com/blog/ugc-view-bonus-deals"
+    }
+    </script>
+
+    <!-- ===== GA4 延迟加载（spec §10 + perf：TBT 优化） =====
+         dataLayer/gtag 队列同步直出（延迟前的 gtag() 调用进队列不丢失）；
+         外部 gtag.js 改为首次交互（pointerdown/keydown/wheel）或 5s 兜底后注入，幂等只加载一次 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      (function () {
+        var EVENTS = ['pointerdown', 'keydown', 'wheel'];
+        var done = false;
+        var timer = 0;
+        function loadGA4() {
+          if (done) return;
+          done = true;
+          clearTimeout(timer);
+          EVENTS.forEach(function (n) { removeEventListener(n, loadGA4); });
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-52NE0FELYX';
+          document.head.appendChild(s);
+          gtag('js', new Date());
+          gtag('config', 'G-52NE0FELYX');
+        }
+        timer = setTimeout(loadGA4, 5000);
+        EVENTS.forEach(function (n) { addEventListener(n, loadGA4, { once: true, passive: true }); });
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
+    <!-- 纯 HTML+CSS 内容页（C-PAGE-TEMPLATE-B2@1 骨架），无业务 JS；仅 GA4 统计（延迟加载，见 head 内联脚本） -->
+    <header class="border-b border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-3xl items-center justify-between px-4 py-4">
+        <span class="text-lg font-bold">UGC Toolkit</span>
+        <a href="/" class="text-indigo-600 hover:underline">&larr; Back to calculator</a>
+      </div>
+    </header>
+    <main class="mx-auto max-w-3xl px-4 py-10">
+      <h1 class="text-3xl font-bold">UGC View Bonus Deals Explained: $100 at 100K Views and Other Standard Structures</h1>
+      <p class="mt-2 text-sm text-slate-600">Last updated: 2026-11</p>
+
+      <p class="mt-4 leading-relaxed text-slate-600">You quoted a base rate. The brand countered with something extra: "We'll pay you a bonus if the video hits 100K views." That clause has a market rate — and most creators accept whatever number the brand offers, because they've never seen the ladder. This guide shows the standard view bonus structure, where these deals show up, the math on three worked examples, and the contract terms that decide whether the bonus ever gets paid — based on aggregated public benchmarks.</p>
+
+      <h2 class="mt-10 text-xl font-bold">What Is a UGC View Bonus?</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">A view bonus is a performance bonus paid on top of your base rate when a video you delivered hits an agreed view milestone — usually after the brand puts paid spend behind it. The standard structure is a ladder: $100 at 100K views, $250 at 250K, and $500 at 500K.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">The key words are "on top." Your base rate pays for production — concepting, filming, editing, delivery. The view bonus pays for outcome: the brand shares a slice of the upside when its paid campaign works. It is not a substitute for your base rate, and it is not a revenue share that replaces your fee when views don't arrive. A deal that pays "only if it performs" is not a view bonus deal — it's a deal with no guarantee, and you should price it as one.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">One relative worth naming: influencer posting. That's when you publish to your own audience and charge a distribution fee for the reach you already own. A view bonus is different — the video usually runs from the brand's ad account, as a Spark Ad on TikTok or a partnership ad on Instagram, so the milestone measures the campaign's performance, not your follower count. A creator with 2,000 followers can earn the same view bonus as one with 200,000 — the brand's spend drives the views, not your reach.</p>
+
+      <h2 class="mt-10 text-xl font-bold">The Standard View Bonus Ladder</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">What should you ask for at each milestone? The 2026 benchmark ladder pays $100 at 100,000 views, $250 at 250,000, and $500 at 500,000 — figures based on aggregated public benchmarks.</p>
+      <div class="mt-4 overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-slate-100">
+              <th class="px-3 py-2 text-left font-semibold">Views milestone</th>
+              <th class="px-3 py-2 text-left font-semibold">Standard bonus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">100,000</td>
+              <td class="px-3 py-2 font-semibold">$100</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">250,000</td>
+              <td class="px-3 py-2 font-semibold">$250</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">500,000</td>
+              <td class="px-3 py-2 font-semibold">$500</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 leading-relaxed text-slate-600">Read the ladder as three separate trigger points, not a cumulative schedule. Most deals pay the highest milestone the video reaches, not the sum of every milestone passed — and that interpretation is exactly what belongs in your contract, covered below. At the top of the ladder, $500 for a half-million-view ad creative is performance money the brand pays only after the ad has already earned it back.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">The ladder is a reference structure, not a ceiling. Videos that run for months with heavy spend can pass 500K views easily; when a brand forecasts seven-figure reach, quote the ladder as a floor and negotiate the upper milestones before signing. After launch, you have no leverage to add them.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">Notice also where the ladder starts: 100K. There is no standard bonus tier below that line. If the brand's planned spend makes 100K look unlikely, don't force a ladder onto the deal — price the certainty instead, with a higher base rate or a longer usage license.</p>
+
+      <h2 class="mt-10 text-xl font-bold">Where View Bonus Deals Show Up</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Which deals carry a view bonus? Based on aggregated public benchmarks, three situations show up most:</p>
+      <ol class="mt-3 list-decimal space-y-2 pl-6 leading-relaxed text-slate-600">
+        <li><strong>Paid ad deals.</strong> Brands buying UGC to run as Spark Ads or partnership ads attach view bonuses most often, because paid spend makes the milestones both reachable and measurable.</li>
+        <li><strong>Performance-brand campaigns.</strong> E-commerce brands that judge creative by return on ad spend prefer outcome-linked pricing — the bonus aligns your incentive with theirs.</li>
+        <li><strong>Multi-video batch deals.</strong> When a brand orders three to five videos for testing, per-video milestones let it reward whichever creative wins, without re-negotiating the brief.</li>
+      </ol>
+      <p class="mt-3 leading-relaxed text-slate-600">What you won't see: view bonuses on organic-only deals, where the brand posts to its own feed with no spend behind the video. Without paid distribution, hitting 100K views is a lottery ticket, not a pricing term — quote those deals on base rate and usage rights instead.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">Brands propose the clause more often than creators do, but there is no rule that says you wait to be asked. Attaching the standard ladder to your next paid-ads quote is a low-cost move: it signals you know how performance pricing works, and it puts your milestones on the table before the brand's own version arrives at half the rate.</p>
+
+      <h2 class="mt-10 text-xl font-bold">View Bonus Math: Worked Examples</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">How does the ladder change a quote? Three deals, three tiers, every number shown.</p>
+
+      <h3 class="mt-8 font-bold">Example 1 — intermediate creator, $200 base (band $150–350)</h3>
+      <p class="mt-2 leading-relaxed text-slate-600">One video for a paid social test.</p>
+      <div class="mt-4 overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-slate-100">
+              <th class="px-3 py-2 text-left font-semibold">Outcome</th>
+              <th class="px-3 py-2 text-left font-semibold">Math</th>
+              <th class="px-3 py-2 text-left font-semibold">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">Video stays under 100K views</td>
+              <td class="px-3 py-2 text-slate-600">$200 base</td>
+              <td class="px-3 py-2 font-semibold">$200</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">Video passes 100K views</td>
+              <td class="px-3 py-2 text-slate-600">$200 + $100 bonus</td>
+              <td class="px-3 py-2 font-semibold">$300</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">Video passes 500K views</td>
+              <td class="px-3 py-2 text-slate-600">$200 + $500 bonus</td>
+              <td class="px-3 py-2 font-semibold">$700</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="mt-8 font-bold">Example 2 — beginner creator, $150 base (band $75–250)</h3>
+      <p class="mt-2 leading-relaxed text-slate-600">A first paid-ads deal with a 250K milestone: $150 + $250 = <strong>$400</strong> if triggered. The bonus alone is worth more than the base rate — which is why agreeing to "no bonus" on a paid deal leaves real money on the table.</p>
+
+      <h3 class="mt-8 font-bold">Example 3 — advanced creator, $400 base (band $250–600)</h3>
+      <p class="mt-2 leading-relaxed text-slate-600">A three-video batch where one creative crosses 500K: $400 × 3 = $1,200 base, plus a $500 bonus on the winner = <strong>$1,700</strong> total. The batch structure means the brand pays the bonus only on the creative that earned it.</p>
+
+      <p class="mt-3 leading-relaxed text-slate-600">Every base rate above sits inside its 2026 band — beginner $75–250, intermediate $150–350, advanced $250–600. The <a href="/" class="text-indigo-600 hover:underline">UGC rate calculator</a> prices those bands the same way: base rate for the video, view bonus as its own line on top.</p>
+
+      <h2 class="mt-10 text-xl font-bold">Negotiation Notes: Bonus on Top, Milestones in Writing</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Two rules protect the money.</p>
+      <p class="mt-3 leading-relaxed text-slate-600"><strong>The bonus is an add-on, not a replacement.</strong> If a brand offers "$300 total, but $100 of it is a view bonus," that is a $200 guaranteed deal wearing a $300 costume. Your base rate is the floor; the ladder is upside. When a brand wants to shift risk onto you by swapping base pay for performance pay, the price of that risk belongs in the quote.</p>
+      <p class="mt-3 leading-relaxed text-slate-600"><strong>The measurement terms go in the contract.</strong> A milestone that isn't defined is a bonus that doesn't get paid. Four terms, written down:</p>
+      <ul class="mt-3 list-disc space-y-2 pl-6 leading-relaxed text-slate-600">
+        <li><strong>Which dashboard counts.</strong> The brand's ad manager, the platform's public counter, or an analytics export — they disagree, sometimes by a lot.</li>
+        <li><strong>The window.</strong> Milestones measured over 30 days pay differently than milestones measured over the life of the ad.</li>
+        <li><strong>Stacking.</strong> Highest milestone reached, or the sum of every milestone passed? Both exist in the market; only one is in your contract.</li>
+        <li><strong>Per video or per campaign.</strong> In a batch deal, bonuses attach to each video's own performance — not the campaign average.</li>
+      </ul>
+      <p class="mt-3 leading-relaxed text-slate-600">Send the number with those terms attached, and the bonus stops being a promise. It becomes a line item the brand's ops team can pay without a meeting.</p>
+
+      <h2 class="mt-10 text-xl font-bold">Price the Base First</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">A view bonus can double a good deal — but only if the base underneath it was priced right.</p>
+      <div class="mt-4 rounded-lg border border-indigo-200 bg-indigo-50 p-6">
+        <p class="font-bold">Price your next deal</p>
+        <p class="mt-2 leading-relaxed text-slate-600">Start with the <a href="/" class="font-semibold text-indigo-600 hover:underline">UGC rate calculator</a>: pick your experience tier and content type, read your per-video band off the result panel, then quote the ladder on top as its own line.</p>
+      </div>
+      <p class="mt-4 leading-relaxed text-slate-600">New to pricing UGC overall? The <a href="/blog/how-much-to-charge-ugc" class="text-indigo-600 hover:underline">complete pricing guide — How Much to Charge for UGC in 2026</a> covers base rates for all four experience tiers and every add-on, and <a href="/blog/ugc-rates-per-video" class="text-indigo-600 hover:underline">UGC rates per video</a> breaks down what one video should cost by platform and deliverable.</p>
+      <p class="mt-6 text-sm italic leading-relaxed text-slate-500">Figures based on aggregated public benchmarks — platform data, job posts, and published rate sheets — as of 2026-11. Estimates, not financial advice.</p>
+
+      <section id="faq">
+        <h2 class="mt-10 text-xl font-bold">Frequently Asked Questions</h2>
+        <h3 class="mt-6 font-bold">What is a UGC view bonus?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">A performance bonus paid on top of your base rate when a video you delivered hits an agreed view milestone, usually after the brand puts paid spend behind it. The standard ladder pays $100 at 100K views, $250 at 250K, and $500 at 500K.</p>
+        <h3 class="mt-6 font-bold">How much is a view bonus at 100K views?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">$100, based on aggregated public benchmarks. At 250K views the standard bonus is $250, and at 500K views it's $500.</p>
+        <h3 class="mt-6 font-bold">Is a view bonus paid instead of my base rate?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">No. The bonus is an add-on. Your base rate pays for production and is guaranteed; the view bonus is upside that triggers if the video performs. Never swap base pay for performance pay at the same total.</p>
+        <h3 class="mt-6 font-bold">How are views counted for a view bonus?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">However your contract says. Define which dashboard counts, over what window, whether milestones stack, and whether bonuses are per video or per campaign — the brand's ad manager and the platform's public counter often disagree.</p>
+        <h3 class="mt-6 font-bold">Do I need followers to earn a view bonus?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">No. The video usually runs from the brand's ad account as a Spark Ad or partnership ad, so the milestone measures the campaign's performance, not your reach.</p>
+      </section>
+    </main>
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto max-w-3xl px-4 py-6 text-sm text-slate-600">
+        <!-- 页脚与主站一致：免责声明 + Not financial advice + 联盟披露 + 合规链接组（+ Pricing Guide） -->
+        <p>Estimates based on community data &mdash; verify against your niche. Not financial advice.</p>
+        <p class="mt-2">Some links on this site may be affiliate links. If you buy through them, we may earn a commission at no extra cost to you.</p>
+        <nav class="mt-3 flex flex-wrap gap-4" aria-label="Legal">
+          <a href="/" class="text-indigo-600 hover:underline">Calculator</a>
+          <a href="/blog/how-much-to-charge-ugc" class="text-indigo-600 hover:underline">Pricing Guide</a>
+          <a href="/privacy" class="text-indigo-600 hover:underline">Privacy Policy</a>
+          <a href="/terms" class="text-indigo-600 hover:underline">Terms of Service</a>
+          <a href="/privacy#ccpa" class="text-indigo-600 hover:underline">Do Not Sell or Share My Personal Information</a>
+        </nav>
+        <p class="mt-3">&copy; 2026 UGC Toolkit</p>
+      </div>
+    </footer>
+  </body>
+</html>

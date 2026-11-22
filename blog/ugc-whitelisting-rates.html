@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UGC Whitelisting Rates: What to Charge per Month | UGC Toolkit</title>
+    <meta name="description" content="UGC whitelisting rates explained: charge $100-500/mo per platform on top of your video fee. Benchmarks, billing rules, and a worked pricing example." />
+    <meta name="robots" content="index, follow" />
+    <!-- 自指 canonical 用 clean URL：Cloudflare Pages 将 /blog/ugc-whitelisting-rates.html 301 → clean URL -->
+    <link rel="canonical" href="https://ugc-toolkit.com/blog/ugc-whitelisting-rates" />
+    <!-- 同款 emoji favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧮</text></svg>" />
+    <link rel="stylesheet" href="/src/assets/content.css" />
+
+    <!-- ===== Open Graph ===== -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="UGC Toolkit" />
+    <meta property="og:url" content="https://ugc-toolkit.com/blog/ugc-whitelisting-rates" />
+    <meta property="og:title" content="UGC Whitelisting Rates: What to Charge per Month | UGC Toolkit" />
+    <meta property="og:description" content="UGC whitelisting rates explained: charge $100-500/mo per platform on top of your video fee. Benchmarks, billing rules, and a worked pricing example." />
+    <meta property="og:image" content="https://ugc-toolkit.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="UGC whitelisting rates — monthly pricing benchmarks per platform" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- ===== Twitter Card ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="UGC Whitelisting Rates: What to Charge per Month | UGC Toolkit" />
+    <meta name="twitter:description" content="UGC whitelisting rates explained: charge $100-500/mo per platform on top of your video fee." />
+    <meta name="twitter:image" content="https://ugc-toolkit.com/og-image.png" />
+
+    <!-- ===== FAQPage JSON-LD（Answer 与页面可见 FAQ 文本逐字一致） ===== -->
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How much should I charge for UGC whitelisting?",
+          "acceptedAnswer": { "@type": "Answer", "text": "$100–500/mo per platform, billed monthly on top of your video fee — based on aggregated public benchmarks. TikTok and Instagram authorizations are two separate monthly fees, not one." } },
+        { "@type": "Question", "name": "Is whitelisting a one-time fee or a monthly fee?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Monthly. The authorization lasts as long as the ads run, so it re-bills every month the campaign stays live — same video, recurring revenue. A one-time fee gives away months of ad runtime for free." } },
+        { "@type": "Question", "name": "Is whitelisting the same as usage rights?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Usage rights license your footage — the brand runs your video from its own ad accounts, priced by license length (+30–50% for 30 days up to +100%+ for a buyout). Whitelisting rents your handle — the brand runs ads that appear to come from you, priced at $100–500/mo per platform." } },
+        { "@type": "Question", "name": "Do whitelisting rates depend on my follower count?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The brand pays for the content and the ad authorization, not your reach. Followers only set the distribution fee when you also publish the video organically from your own account." } },
+        { "@type": "Question", "name": "How do I add whitelisting to a deal I already quoted?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Quote it as a separate monthly line on top of the agreed video fee — for example, $200/mo for TikTok Spark Ads authorization — and re-quote the monthly fee at each renewal." } }
+      ] }
+    </script>
+
+    <!-- ===== Article JSON-LD ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "UGC Whitelisting Rates: How Much to Charge per Month for Spark Ads",
+      "description": "UGC whitelisting rates explained: charge $100-500/mo per platform on top of your video fee. Benchmarks, billing rules, and a worked pricing example.",
+      "datePublished": "2026-11-22",
+      "dateModified": "2026-11-22",
+      "inLanguage": "en",
+      "image": "https://ugc-toolkit.com/og-image.png",
+      "publisher": { "@type": "Organization", "name": "UGC Toolkit" },
+      "author": { "@type": "Organization", "name": "UGC Toolkit" },
+      "mainEntityOfPage": "https://ugc-toolkit.com/blog/ugc-whitelisting-rates"
+    }
+    </script>
+
+    <!-- ===== GA4 延迟加载（spec §10 + perf：TBT 优化） =====
+         dataLayer/gtag 队列同步直出（延迟前的 gtag() 调用进队列不丢失）；
+         外部 gtag.js 改为首次交互（pointerdown/keydown/wheel）或 5s 兜底后注入，幂等只加载一次 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      (function () {
+        var EVENTS = ['pointerdown', 'keydown', 'wheel'];
+        var done = false;
+        var timer = 0;
+        function loadGA4() {
+          if (done) return;
+          done = true;
+          clearTimeout(timer);
+          EVENTS.forEach(function (n) { removeEventListener(n, loadGA4); });
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-52NE0FELYX';
+          document.head.appendChild(s);
+          gtag('js', new Date());
+          gtag('config', 'G-52NE0FELYX');
+        }
+        timer = setTimeout(loadGA4, 5000);
+        EVENTS.forEach(function (n) { addEventListener(n, loadGA4, { once: true, passive: true }); });
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
+    <!-- 纯 HTML+CSS 内容页（C-PAGE-TEMPLATE-B2@1 骨架），无业务 JS；仅 GA4 统计（延迟加载，见 head 内联脚本） -->
+    <header class="border-b border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-3xl items-center justify-between px-4 py-4">
+        <span class="text-lg font-bold">UGC Toolkit</span>
+        <a href="/" class="text-indigo-600 hover:underline">&larr; Back to calculator</a>
+      </div>
+    </header>
+    <main class="mx-auto max-w-3xl px-4 py-10">
+      <h1 class="text-3xl font-bold">UGC Whitelisting Rates: How Much to Charge per Month for Spark Ads</h1>
+      <p class="mt-2 text-sm text-slate-600">Last updated: 2026-11</p>
+
+      <p class="mt-4 leading-relaxed text-slate-600">Whitelisting is the most quietly underpriced line item in UGC. Creators who charge $250 for a video routinely hand over the ad authorization for free, then watch the brand run that video as paid ads for months. The going rate for that authorization is $100–500/mo per platform, billed monthly, on top of your video fee. This guide covers what whitelisting actually is, why it bills monthly instead of once, the 2026 benchmark band, the per-platform rule, the two products it keeps getting confused with, and worked pricing examples — based on aggregated public benchmarks.</p>
+
+      <h2 class="mt-10 text-xl font-bold">What Is Whitelisting?</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Whitelisting is an ad authorization: a brand gets permission to run paid ads through your social handle, using content you made — TikTok Spark Ads is the most common form. The standard charge is $100–500/mo per platform, on top of your video fee.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">The mechanics are simple. On TikTok, you grant the brand an ad authorization from your account, and its team runs Spark Ads in which the "sponsored" post carries your handle, your face, and your voice. On Instagram, the equivalent is partnership ads: the brand promotes a post that lives on your account, and it reaches cold audiences looking like it came from you — because functionally, it did.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">Brands pay for this because creator identity performs. An ad that appears to come from a real person outperforms the same footage cut as a brand commercial — higher trust, higher engagement, cheaper results. Your video fee already paid for the footage. What the brand rents with whitelisting is your identity as the ad's sender — and that rent is a separate product with a separate price.</p>
+
+      <h2 class="mt-10 text-xl font-bold">Why Whitelisting Bills Monthly, Not Once</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Because the authorization lasts exactly as long as the ads run. A whitelisted video can stay in paid rotation for weeks or months — so the fee recurs every month the campaign stays live. Same video, recurring revenue.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">A one-time charge fits a one-time deliverable: you deliver the file, the brand pays, the transaction ends. Whitelisting is not a deliverable; it is a standing permission. Every month the brand keeps your handle behind paid spend, it is consuming the thing you sold — and every month it stops, the fee stops too. Monthly billing is fair in both directions: brands never pay for ads they paused, and you never donate runtime the brand is actively monetizing.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">This is also why whitelisting belongs in the same mental bucket as retainer income, not upsells. A $250 video with a $200/mo whitelisting line is a $250 transaction plus a $200/mo annuity, for as long as the creative keeps performing. One deal, two revenue shapes. Quote them as separate lines, invoice the monthly fee on its own cycle, and re-quote at renewal — your authorization rate should grow with your portfolio, same as your video rate.</p>
+
+      <h2 class="mt-10 text-xl font-bold">UGC Whitelisting Rates: The Monthly Benchmark</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">How much is whitelisting? Based on aggregated public benchmarks, whitelisting adds $100–500/mo per platform to a deal — billed monthly, on top of your video rate.</p>
+      <div class="mt-4 overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-slate-100">
+              <th class="px-3 py-2 text-left font-semibold">Whitelisting arrangement</th>
+              <th class="px-3 py-2 text-left font-semibold">What the brand gets</th>
+              <th class="px-3 py-2 text-left font-semibold">Monthly fee (USD)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">Single platform</td>
+              <td class="px-3 py-2 text-slate-600">Ad authorization on one platform (e.g. TikTok Spark Ads)</td>
+              <td class="px-3 py-2 font-semibold">$100–500/mo</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">Two platforms</td>
+              <td class="px-3 py-2 text-slate-600">Separate authorizations, e.g. TikTok + Instagram</td>
+              <td class="px-3 py-2 font-semibold">$200–1,000/mo combined</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 leading-relaxed text-slate-600">The band is wide because the product varies: your experience tier, your niche, the brand's spend behind the ads, and how the creative performs all move the number. Two habits keep you priced sanely inside it. First, a first whitelisting deal starts in the lower half of the band — you are pricing an unproven authorization, and the brand is taking a measured risk. Second, once a campaign has live results with your handle on it, your next authorization quote moves up: the brand now knows the ad works, and that knowledge is worth money.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">What the monthly fee never includes is production. The video is quoted on your base rate — $75–250 for beginners, $150–350 at intermediate — and whitelisting attaches as its own line. If a brief says "video plus whitelisting," the quote has two numbers: a one-time video fee and a recurring monthly fee.</p>
+
+      <h2 class="mt-10 text-xl font-bold">Two Platforms Means Two Monthly Fees</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Whitelisting bills per platform. A TikTok Spark Ads authorization and an Instagram partnership ads authorization are two separate products — two permissions, two fees, every month.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">The reason is mechanical, not negotiable. Each platform's ad system issues its own authorization: a TikTok ad code does nothing for Instagram delivery, and an Instagram partnership ad needs access to the Instagram post itself. There is no single "whitelisting on" switch a brand can flip across platforms — which means there is no honest way for a brand to argue two authorizations into one fee.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">Write the per-platform structure into the contract: each platform named, each monthly fee stated, each billed on its own line. When a campaign starts on TikTok and the brand later wants Instagram too, the answer is a second monthly fee inside the same $100–500 band — not a discount for volume, because you are not producing anything twice; you are extending the ad's identity to a second surface for another month at a time.</p>
+
+      <h2 class="mt-10 text-xl font-bold">Whitelisting Is Not Usage Rights</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Usage rights license your footage: the brand takes your video file and runs it from its own ad accounts, under its own name, priced by license length — +30–50% for 30 days, +50–100% for 90 days to 12 months, +100% or more for a buyout. Whitelisting rents your handle: the brand runs ads that appear to come from you, priced at $100–500/mo per platform. Different product, different pricing model.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">The fastest way to tell them apart in a brief is one question: whose identity does the ad carry? If the brand's creative team uploads your video to the brand's ad account, that is usage rights — a license to your content. If the ad runs from your handle with a sponsored label over your profile photo, that is whitelisting — a rental of your identity as the sender.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">The two stack, and often should. A performance brand that wants your video in its own ads and your handle behind Spark Ads is buying three things in one deal: production, a usage license, and a monthly whitelisting authorization. Quote all three lines. For the full license-length pricing — multipliers, exclusivity, worked math — read the <a href="/blog/ugc-usage-rights-pricing" class="text-indigo-600 hover:underline">usage rights pricing guide</a>.</p>
+
+      <h2 class="mt-10 text-xl font-bold">Whitelisting Is Not Influencer Posting Either</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">In whitelisting, the brand runs paid ads on your content and controls the distribution. In influencer posting, you publish an organic post from your own account and charge a distribution fee on top of your UGC rate. One is paid distribution the brand drives; the other is your own feed, posted by you.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">The money moves differently too. Influencer posting is priced by your audience — brands pay for reach you already own, which is why the distribution add-on runs from $10 to $8,000 per video depending on follower size. Whitelisting has nothing to do with your follower count: the brand targets its own audiences with paid spend and is buying your identity, not your reach. That is the standard UGC pricing principle with one clean exception — followers set the price when you post, and matter not at all when the brand pays to run ads through your authorization.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">One question separates them in any brief: who hits publish? If you post the video organically, that is influencer posting and it prices by audience. If the brand's ads run through your authorization, that is whitelisting and it prices monthly, per platform. A single deal can carry all three lines — video, posting, whitelisting — and each is negotiated on its own logic.</p>
+
+      <h2 class="mt-10 text-xl font-bold">Pricing Example: Video Fee Plus Monthly Whitelisting</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Quote whitelisting as its own monthly line on top of your video fee. An intermediate creator charging $250 for an edited video, plus $200/mo for TikTok whitelisting, bills $450 upfront — then $200 every month the ads run.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">The pieces, with the math shown:</p>
+      <ul class="mt-3 list-disc space-y-2 pl-6 leading-relaxed text-slate-600">
+        <li>Video: intermediate edited-video band is $150–350; this creator quotes <strong>$250</strong></li>
+        <li>TikTok whitelisting: band is $100–500/mo per platform; this deal sets it at <strong>$200/mo</strong></li>
+        <li>First invoice: $250 + $200 = <strong>$450</strong>, one-time video plus the first month</li>
+        <li>One quarter of live ads: $250 + (3 × $200) = <strong>$850</strong> from a single deal</li>
+        <li>Month two, the brand adds Instagram: a second authorization at <strong>$150/mo</strong> — inside the same band — brings recurring to $200 + $150 = <strong>$350/mo</strong></li>
+      </ul>
+      <p class="mt-3 leading-relaxed text-slate-600">Read the quarter line again, because it is the entire argument for the monthly model: the same video that paid $250 once pays $850 over three months, with zero additional filming. Swap in your own band — $75–250 as a beginner, $250–600 at advanced — and the structure holds; only the first number changes. The whitelisting fee itself is billed monthly, on top of your video rate, never inside it.</p>
+
+      <h2 class="mt-10 text-xl font-bold">Price Your Whitelisting Deal</h2>
+      <div class="mt-4 rounded-lg border border-indigo-200 bg-indigo-50 p-6">
+        <p class="font-bold">Price your next deal</p>
+        <p class="mt-2 leading-relaxed text-slate-600">Run your numbers in the <a href="/" class="font-semibold text-indigo-600 hover:underline">UGC rate calculator</a>, then attach whitelisting as its own monthly line. Pick your experience tier and content type for the per-video band; when you select whitelisting, the results panel adds the monthly fee — $100–500/mo per platform — as a separate recurring line, the same structure this guide just priced by hand.</p>
+      </div>
+      <p class="mt-4 leading-relaxed text-slate-600">New to pricing UGC overall? Start with the <a href="/blog/how-much-to-charge-ugc" class="text-indigo-600 hover:underline">complete guide to how much to charge for UGC</a> — it covers base rates for all four experience tiers, content-type pricing, and how the add-ons stack before whitelisting enters the quote.</p>
+      <p class="mt-6 text-sm italic leading-relaxed text-slate-500">Figures based on aggregated public benchmarks — platform data, job posts, and published rate sheets — as of 2026-11. Estimates, not financial advice.</p>
+
+      <section id="faq">
+        <h2 class="mt-10 text-xl font-bold">Frequently Asked Questions</h2>
+        <h3 class="mt-6 font-bold">How much should I charge for UGC whitelisting?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">$100–500/mo per platform, billed monthly on top of your video fee — based on aggregated public benchmarks. TikTok and Instagram authorizations are two separate monthly fees, not one.</p>
+        <h3 class="mt-6 font-bold">Is whitelisting a one-time fee or a monthly fee?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">Monthly. The authorization lasts as long as the ads run, so it re-bills every month the campaign stays live — same video, recurring revenue. A one-time fee gives away months of ad runtime for free.</p>
+        <h3 class="mt-6 font-bold">Is whitelisting the same as usage rights?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">No. Usage rights license your footage — the brand runs your video from its own ad accounts, priced by license length (+30–50% for 30 days up to +100%+ for a buyout). Whitelisting rents your handle — the brand runs ads that appear to come from you, priced at $100–500/mo per platform.</p>
+        <h3 class="mt-6 font-bold">Do whitelisting rates depend on my follower count?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">No. The brand pays for the content and the ad authorization, not your reach. Followers only set the distribution fee when you also publish the video organically from your own account.</p>
+        <h3 class="mt-6 font-bold">How do I add whitelisting to a deal I already quoted?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">Quote it as a separate monthly line on top of the agreed video fee — for example, $200/mo for TikTok Spark Ads authorization — and re-quote the monthly fee at each renewal.</p>
+      </section>
+    </main>
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto max-w-3xl px-4 py-6 text-sm text-slate-600">
+        <!-- 页脚与主站一致：免责声明 + Not financial advice + 联盟披露 + 合规链接组（+ Pricing Guide） -->
+        <p>Estimates based on community data &mdash; verify against your niche. Not financial advice.</p>
+        <p class="mt-2">Some links on this site may be affiliate links. If you buy through them, we may earn a commission at no extra cost to you.</p>
+        <nav class="mt-3 flex flex-wrap gap-4" aria-label="Legal">
+          <a href="/" class="text-indigo-600 hover:underline">Calculator</a>
+          <a href="/blog/how-much-to-charge-ugc" class="text-indigo-600 hover:underline">Pricing Guide</a>
+          <a href="/privacy" class="text-indigo-600 hover:underline">Privacy Policy</a>
+          <a href="/terms" class="text-indigo-600 hover:underline">Terms of Service</a>
+          <a href="/privacy#ccpa" class="text-indigo-600 hover:underline">Do Not Sell or Share My Personal Information</a>
+        </nav>
+        <p class="mt-3">&copy; 2026 UGC Toolkit</p>
+      </div>
+    </footer>
+  </body>
+</html>

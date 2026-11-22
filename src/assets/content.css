@@ -1,9 +1,16 @@
 /* src/assets/content.css —— /blog/ 内容页样式。
    页面为纯 HTML+CSS 无 JS（GA4 延迟加载内联除外）；Tailwind 4 source(none)
-   关闭自动扫描 + @source 逐个指认 4 个内容页 HTML——与 legal.css 同构，
-   防止与主入口 main.css 互带对方页面的工具类。 */
+   关闭自动扫描 + @source 逐个指认 10 个内容页 HTML——与 legal.css 同构，
+   防止与主入口 main.css 互带对方页面的工具类。
+   注意：@source 必须两层 ../../ 相对路径——一层路径会被静默扫空产出空壳 CSS。 */
 @import "tailwindcss" source(none);
 @source "../../blog/how-much-to-charge-ugc.html";
 @source "../../blog/ugc-rates-per-video.html";
 @source "../../blog/ugc-usage-rights-pricing.html";
 @source "../../blog/ugc-pitch-template.html";
+@source "../../blog/ugc-whitelisting-rates.html";
+@source "../../blog/negotiate-ugc-rates.html";
+@source "../../blog/do-ugc-creators-need-followers.html";
+@source "../../blog/ugc-rates-fiverr-vs-direct.html";
+@source "../../blog/ugc-portfolio-examples.html";
+@source "../../blog/ugc-view-bonus-deals.html";

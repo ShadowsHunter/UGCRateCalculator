@@ -1,6 +1,6 @@
-// scripts/check-seo-content.mjs —— /blog/ 内容页构建产物断言（M2 SEO 内容 · plan §3.3 T11）。
-// 校验对象：dist/blog/*.html ×4、dist/sitemap.xml、dist/index.html 引用的 JS bundle。
-// 断言依据：plan §2.2 C-DATA@1 / C-LINK@1 / C-SITEMAP@1 / C-URL@1 / C-PAGE-TEMPLATE@1。
+// scripts/check-seo-content.mjs —— /blog/ 内容页构建产物断言（M2 SEO 内容 · plan §3.3 T11；第二批扩展 · C-GATE-B2@1）。
+// 校验对象：dist/blog/*.html ×10、dist/sitemap.xml、dist/index.html 引用的 JS bundle。
+// 断言依据：C-DATA@1/C-DATA-B2@1 / C-LINK@1/C-LINK-B2@1 / C-SITEMAP@1/C-SITEMAP-B2@1 / C-URL@1/C-URL-B2@1 / C-PAGE-TEMPLATE@1/C-PAGE-TEMPLATE-B2@1。
 // 任何断言失败：汇总失败项清单后 exit 1（postbuild 阶段自动执行，勾结零容忍——只认产物）。
 import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
@@ -34,6 +34,11 @@ const PAGES = [
       ['50–100', NUM_50_100], ['10–8,000', NUM_10_8000],
     ],
     hubLinks: ['blog/ugc-rates-per-video', 'blog/ugc-usage-rights-pricing', 'blog/ugc-pitch-template'],
+    // 第二批增量（C-LINK-B2@1）：正文末 "More UGC guides" 小节链向全部 6 篇新页
+    moreGuides: [
+      'blog/ugc-whitelisting-rates', 'blog/negotiate-ugc-rates', 'blog/do-ugc-creators-need-followers',
+      'blog/ugc-rates-fiverr-vs-direct', 'blog/ugc-portfolio-examples', 'blog/ugc-view-bonus-deals',
+    ],
   },
   {
     num: '#2',
@@ -60,12 +65,69 @@ const PAGES = [
     // #5 承接页：rate card 锚定 beginner 档
     numbers: [['75–250', NUM_75_250]],
   },
+  {
+    num: '#4',
+    slug: 'ugc-whitelisting-rates',
+    keyword: 'ugc whitelisting rates',
+    // #4 月费模型页：WHITELISTING_MONTHLY 核心区间（C-DATA-B2@1）
+    numbers: [['100–500', NUM_100_500]],
+  },
+  {
+    num: '#6',
+    slug: 'negotiate-ugc-rates',
+    keyword: 'negotiate ugc rates',
+    gumroad: true,
+    // #6 谈判脚本页：usage rights 加价依据 + beginner 底价锚
+    numbers: [['30–50', NUM_30_50], ['75–250', NUM_75_250]],
+  },
+  {
+    num: '#7',
+    slug: 'do-ugc-creators-need-followers',
+    keyword: 'do ugc creators need followers',
+    // #7 共识叙事页：INFLUENCER_ADDONS 全域区间 + BASE_RATES 四档锚
+    numbers: [['10–8,000', NUM_10_8000], ['75–250', NUM_75_250]],
+  },
+  {
+    num: '#8',
+    slug: 'ugc-rates-fiverr-vs-direct',
+    keyword: 'ugc rates fiverr',
+    // #8 渠道对比页：数字仅限自有 BASE_RATES 区间（外部平台费率数字零出现红线）
+    numbers: [['75–250', NUM_75_250]],
+  },
+  {
+    num: '#9',
+    slug: 'ugc-portfolio-examples',
+    keyword: 'ugc portfolio examples',
+    gumroad: true,
+    // #9 新人漏斗页：BASE_RATES beginner 起步档
+    numbers: [['75–250', NUM_75_250]],
+  },
+  {
+    num: '#10',
+    slug: 'ugc-view-bonus-deals',
+    keyword: 'ugc view bonus',
+    // #10 ladder 页：VIEW_BONUS_LADDER 三档 bonus 值 + 100K views 表述（大小写不敏感）
+    numbers: [
+      ['$100', /\$100/], ['$250', /\$250/], ['$500', /\$500/],
+      ['100,000|100K', /100,000|100k/i],
+    ],
+  },
 ]
 
 const SITEMAP_EXISTING = ['https://ugc-toolkit.com/', 'https://ugc-toolkit.com/privacy', 'https://ugc-toolkit.com/terms']
+// 第一批既有 4 blog URL（显式保留校验，防 PAGES 派生断言静默漏检 · C-SITEMAP-B2@1）
+const SITEMAP_EXISTING_BLOG = [
+  'https://ugc-toolkit.com/blog/how-much-to-charge-ugc',
+  'https://ugc-toolkit.com/blog/ugc-rates-per-video',
+  'https://ugc-toolkit.com/blog/ugc-usage-rights-pricing',
+  'https://ugc-toolkit.com/blog/ugc-pitch-template',
+]
 const SITEMAP_BLOG = PAGES.map((p) => `${SITE_ORIGIN}/blog/${p.slug}`)
-// index（SeoContent.vue Guides 小节）反链的 3 个 slug（#2 不要求反链）
-const INDEX_BUNDLE_SLUGS = ['blog/how-much-to-charge-ugc', 'blog/ugc-usage-rights-pricing', 'blog/ugc-pitch-template']
+// index（SeoContent.vue Guides 小节）反链的 slug（#2/#7/#8/#10 不要求反链；第二批追加 #4/#6/#9）
+const INDEX_BUNDLE_SLUGS = [
+  'blog/how-much-to-charge-ugc', 'blog/ugc-usage-rights-pricing', 'blog/ugc-pitch-template',
+  'blog/ugc-whitelisting-rates', 'blog/negotiate-ugc-rates', 'blog/ugc-portfolio-examples',
+]
 
 // —— 通用工具：HTML 实体解码 / 空白归一化 / 可见文本提取 ——
 const NAMED_ENTITIES = {
@@ -131,10 +193,12 @@ for (const page of PAGES) {
   const html = readFileSync(file, 'utf8')
   ok(label, `文件存在 dist/blog/${page.slug}.html (${(html.length / 1024).toFixed(2)} KB)`)
 
-  // title 含目标词（连续子串，大小写不敏感）
+  // title 含目标词（词元全覆盖，与 H1 同语义：R1 表格 #8 官方标题 "UGC Rates on Fiverr…" 含介词 on，
+  // 连续子串口径会误伤需求钦定的标题形态）
   const title = normalize(/<title>([\s\S]*?)<\/title>/i.exec(html)?.[1] ?? '')
-  if (title && title.toLowerCase().includes(page.keyword)) ok(label, `title 含目标词: "${title}"`)
-  else fail(label, 'title 含目标词', `title="${title}" 目标词="${page.keyword}"`)
+  const titleHit = title && page.keyword.split(/\s+/).every((t) => title.toLowerCase().includes(t))
+  if (titleHit) ok(label, `title 含目标词（词元全覆盖）: "${title}"`)
+  else fail(label, 'title 含目标词（词元全覆盖）', `title="${title}" 目标词="${page.keyword}"`)
 
   // H1 含目标词（词元全覆盖：plan R1 允许 H1 微调，如 #3 把 UGC 挪至句尾）
   const h1 = normalize(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i.exec(html)?.[1] ?? '')
@@ -216,6 +280,18 @@ for (const page of PAGES) {
     else fail(label, 'hub 内链齐备（→ #2/#3/#5）', `缺失 ${missing.join(', ')}`)
   }
 
+  // #1 hub 义务（第二批增量）：正文末 "More UGC guides" 小节存在且链向全部 6 篇新页（C-LINK-B2@1）
+  if (page.moreGuides) {
+    const sectionHit = /more ugc guides/i.test(visibleText)
+    const hrefs = new Set(anchors.map((a) => a.href.replace(/^\//, '')))
+    const missingGuides = page.moreGuides.filter((l) => !hrefs.has(l))
+    if (sectionHit && missingGuides.length === 0) ok(label, '"More UGC guides" 小节存在且 6 新页链接齐备')
+    else {
+      const detail = [sectionHit ? null : '小节标题缺失', missingGuides.length ? `缺失 ${missingGuides.join(', ')}` : null].filter(Boolean).join('; ')
+      fail(label, '"More UGC guides" 小节 + 6 新页链接', detail)
+    }
+  }
+
   // #5 承接页：GUMROAD_URL 字面值出现 ≥2 次（无 UTM）
   if (page.gumroad) {
     const count = html.split(GUMROAD_URL).length - 1
@@ -238,14 +314,17 @@ if (!existsSync(sitemapFile)) {
   const sitemap = readFileSync(sitemapFile, 'utf8')
   ok('sitemap.xml', '文件存在 dist/sitemap.xml')
   const locs = [...sitemap.matchAll(/<loc>([\s\S]*?)<\/loc>/g)].map((m) => m[1].trim())
-  if (locs.length === 7) ok('sitemap.xml', `恰好 7 个 <loc>`)
-  else fail('sitemap.xml', '恰好 7 个 <loc>', `实际 ${locs.length} 个`)
+  if (locs.length === 13) ok('sitemap.xml', `恰好 13 个 <loc>`)
+  else fail('sitemap.xml', '恰好 13 个 <loc>', `实际 ${locs.length} 个`)
   const missingExisting = SITEMAP_EXISTING.filter((u) => !locs.includes(u))
+  const missingExistingBlog = SITEMAP_EXISTING_BLOG.filter((u) => !locs.includes(u))
   const missingBlog = SITEMAP_BLOG.filter((u) => !locs.includes(u))
-  if (missingExisting.length === 0) ok('sitemap.xml', '既有 3 URL 原样保留（/、/privacy、/terms）')
-  else fail('sitemap.xml', '既有 3 URL 原样保留', `缺失 ${missingExisting.join(', ')}`)
-  if (missingBlog.length === 0) ok('sitemap.xml', '4 个 blog clean URL 齐备')
-  else fail('sitemap.xml', '4 个 blog clean URL 齐备', `缺失 ${missingBlog.join(', ')}`)
+  if (missingExisting.length === 0) ok('sitemap.xml', '既有非 blog 3 URL 原样保留（/、/privacy、/terms）')
+  else fail('sitemap.xml', '既有非 blog 3 URL 原样保留', `缺失 ${missingExisting.join(', ')}`)
+  if (missingExistingBlog.length === 0) ok('sitemap.xml', '既有 4 blog URL 保留（第一批 #1/#2/#3/#5）')
+  else fail('sitemap.xml', '既有 4 blog URL 保留', `缺失 ${missingExistingBlog.join(', ')}`)
+  if (missingBlog.length === 0) ok('sitemap.xml', '10 个 blog clean URL 齐备（第一批 4 + 第二批 6）')
+  else fail('sitemap.xml', '10 个 blog clean URL 齐备', `缺失 ${missingBlog.join(', ')}`)
   // XML 良构：轻量栈式标签配对（排除声明/注释/自闭合）
   const stripped = sitemap.replace(/<!--[\s\S]*?-->/g, '').replace(/<\?[\s\S]*?\?>/g, '').replace(/<!DOCTYPE[^>]*>/gi, '')
   const stack = []
@@ -263,7 +342,7 @@ if (!existsSync(sitemapFile)) {
   else fail('sitemap.xml', 'XML 良构', wfError)
 }
 
-// —— 断言 7：dist/index.html 引用的 JS bundle 含 Guides 3 链接 slug ——
+// —— 断言 7：dist/index.html 引用的 JS bundle 含 Guides 6 链接 slug ——
 console.log('[index bundle]')
 const indexFile = join(DIST, 'index.html')
 if (!existsSync(indexFile)) {
@@ -280,15 +359,16 @@ if (!existsSync(indexFile)) {
     }).join('\n')
     ok('index', `index.html 引用 JS bundle（${jsSrcs.join(', ')}）`)
     const missingSlugs = INDEX_BUNDLE_SLUGS.filter((s) => !bundle.includes(s))
-    if (missingSlugs.length === 0) ok('index', `bundle 含 Guides 3 链接 slug（${INDEX_BUNDLE_SLUGS.join(' / ')}）`)
-    else fail('index', 'bundle 含 Guides 3 链接 slug', `缺失 ${missingSlugs.join(', ')}`)
+    if (missingSlugs.length === 0) ok('index', `bundle 含 Guides 6 链接 slug（${INDEX_BUNDLE_SLUGS.join(' / ')}）`)
+    else fail('index', 'bundle 含 Guides 6 链接 slug', `缺失 ${missingSlugs.join(', ')}`)
   }
 }
 
 // —— 断言 8：content CSS 覆盖检查（防 @source 路径错误产出空壳 CSS · 2026-11-21 线上裸奔事故补丁）——
 // 事故：content.css 的 @source 写成 ../blog/（一层），Tailwind 静默扫空，产物仅 4.2KB 纯 theme 层，
 // 4 页全部无样式上线；此前断言只查 CSS 文件存在（200），未查内容覆盖。本断言双保险：
-//   a) 体积下限 >6000B（空壳 ≈4.2KB，正常 ≥9KB）；b) 4 页 body class 每个 token 在 CSS 中有规则。
+//   a) 体积下限 >6000B（空壳 ≈4.2KB，正常 ≥9KB）；b) 10 页 body class 每个 token 在 CSS 中有规则。
+// 断言 8 按 PAGES 驱动遍历，第二批 6 新页加入 PAGES 后自动纳入覆盖检查（C-GATE-B2@1 第 5 条）。
 console.log('[content css]')
 {
   const cssHrefs = new Set()
@@ -302,7 +382,7 @@ console.log('[content css]')
     }
   }
   if (cssHrefs.size === 0) {
-    fail('content css', 'blog 页引用 /assets/ CSS', '4 页均未发现 stylesheet 引用')
+    fail('content css', 'blog 页引用 /assets/ CSS', '10 页均未发现 stylesheet 引用')
   } else {
     const cssPath = join(DIST, [...cssHrefs][0].replace(/^\//, ''))
     if (!existsSync(cssPath)) {

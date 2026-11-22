@@ -3,11 +3,15 @@
 import { SEO_SECTIONS } from '../copy'
 
 // Guides: reverse internal links from the calculator homepage to blog content
-// (D04 §2.1 #1/#3/#5, C-LINK@1) — prevents orphan pages; clean URLs per C-URL@1.
+// (batch 1: D04 §2.1 #1/#3/#5, C-LINK@1; batch 2 adds #4/#6/#9, C-LINK-B2@1)
+// — prevents orphan pages; clean URLs per C-URL@1/C-URL-B2@1.
 const GUIDES = [
   { title: 'How much to charge for UGC — the complete 2026 pricing guide', href: '/blog/how-much-to-charge-ugc' },
   { title: 'UGC usage rights pricing: 30-day, 90-day and buyout rates', href: '/blog/ugc-usage-rights-pricing' },
   { title: 'UGC pitch template: how to email brands and get responses', href: '/blog/ugc-pitch-template' },
+  { title: 'UGC whitelisting rates: how much to charge per month', href: '/blog/ugc-whitelisting-rates' },
+  { title: 'How to negotiate UGC rates: scripts for asking for more', href: '/blog/negotiate-ugc-rates' },
+  { title: 'UGC portfolio examples: what brands actually pay for', href: '/blog/ugc-portfolio-examples' },
 ] as const
 </script>
 

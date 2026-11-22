@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UGC Portfolio Examples: What Brands Actually Pay For (2026) | UGC Toolkit</title>
+    <meta name="description" content="See UGC portfolio examples built for beginners: 3–5 spec videos that win paid deals, page essentials, and what to charge ($75–250 to start)." />
+    <meta name="robots" content="index, follow" />
+    <!-- 自指 canonical 用 clean URL：Cloudflare Pages 将 /blog/ugc-portfolio-examples.html 301 → clean URL -->
+    <link rel="canonical" href="https://ugc-toolkit.com/blog/ugc-portfolio-examples" />
+    <!-- 同款 emoji favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧮</text></svg>" />
+    <link rel="stylesheet" href="/src/assets/content.css" />
+
+    <!-- ===== Open Graph ===== -->
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="UGC Toolkit" />
+    <meta property="og:url" content="https://ugc-toolkit.com/blog/ugc-portfolio-examples" />
+    <meta property="og:title" content="UGC Portfolio Examples: What Brands Actually Pay For (2026) | UGC Toolkit" />
+    <meta property="og:description" content="See UGC portfolio examples built for beginners: 3–5 spec videos that win paid deals, page essentials, and what to charge ($75–250 to start)." />
+    <meta property="og:image" content="https://ugc-toolkit.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Beginner UGC portfolio examples — what brands actually pay for" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- ===== Twitter Card ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="UGC Portfolio Examples: What Brands Actually Pay For (2026) | UGC Toolkit" />
+    <meta name="twitter:description" content="See UGC portfolio examples built for beginners: 3–5 spec videos that win paid deals, page essentials, and what to charge ($75–250 to start)." />
+    <meta name="twitter:image" content="https://ugc-toolkit.com/og-image.png" />
+
+    <!-- ===== FAQPage JSON-LD（Answer 与页面可见 FAQ 文本逐字一致） ===== -->
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How many videos should a beginner UGC portfolio have?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Three to five. That is enough to show range — an unboxing, a problem–solution piece, a testimonial — without diluting your niche focus. Five strong videos in one niche outperform ten scattered across five." } },
+        { "@type": "Question", "name": "Can I build a UGC portfolio without a brand deal or permission?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. A spec ad is a video you make for a product you bought, on your own initiative, with no brief and no authorization — and it is fully legitimate portfolio material. Labeling spec work \"self-initiated\" reads as professionalism, not confession." } },
+        { "@type": "Question", "name": "What should a beginner UGC creator charge per video?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Beginners charge $75–250 per video in 2026 community data, based on aggregated public benchmarks. Quote inside that band — never below it — and move up as repeat clients stack up. Most working creators land in the $150–300 range for a standard edited video." } },
+        { "@type": "Question", "name": "What should be on the portfolio page itself?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Four elements: embedded videos that play in place, a two-line caption per video (deliverables + the brief it answers), a rate anchor such as \"edited vertical videos from $125,\" and one professional contact email. Anything a brand has to ask about is a step where it leaves." } },
+        { "@type": "Question", "name": "Do I need followers to get UGC brand deals?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Brands pay for the video, not your reach — UGC pricing is based on your content and the rights you sell, not your audience size. The one exception is posting from your own account, which adds a distribution fee on top of your base rate." } }
+      ] }
+    </script>
+
+    <!-- ===== Article JSON-LD ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "UGC Portfolio Examples for Beginners: What Brands Actually Pay For",
+      "description": "See UGC portfolio examples built for beginners: 3–5 spec videos that win paid deals, page essentials, and what to charge ($75–250 to start).",
+      "datePublished": "2026-11-22",
+      "dateModified": "2026-11-22",
+      "inLanguage": "en",
+      "image": "https://ugc-toolkit.com/og-image.png",
+      "publisher": { "@type": "Organization", "name": "UGC Toolkit" },
+      "author": { "@type": "Organization", "name": "UGC Toolkit" },
+      "mainEntityOfPage": "https://ugc-toolkit.com/blog/ugc-portfolio-examples"
+    }
+    </script>
+
+    <!-- ===== GA4 延迟加载（spec §10 + perf：TBT 优化） =====
+         dataLayer/gtag 队列同步直出（延迟前的 gtag() 调用进队列不丢失）；
+         外部 gtag.js 改为首次交互（pointerdown/keydown/wheel）或 5s 兜底后注入，幂等只加载一次 -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      (function () {
+        var EVENTS = ['pointerdown', 'keydown', 'wheel'];
+        var done = false;
+        var timer = 0;
+        function loadGA4() {
+          if (done) return;
+          done = true;
+          clearTimeout(timer);
+          EVENTS.forEach(function (n) { removeEventListener(n, loadGA4); });
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-52NE0FELYX';
+          document.head.appendChild(s);
+          gtag('js', new Date());
+          gtag('config', 'G-52NE0FELYX');
+        }
+        timer = setTimeout(loadGA4, 5000);
+        EVENTS.forEach(function (n) { addEventListener(n, loadGA4, { once: true, passive: true }); });
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
+    <!-- 纯 HTML+CSS 内容页（C-PAGE-TEMPLATE-B2@1 骨架），无业务 JS；仅 GA4 统计（延迟加载，见 head 内联脚本） -->
+    <header class="border-b border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-3xl items-center justify-between px-4 py-4">
+        <span class="text-lg font-bold">UGC Toolkit</span>
+        <a href="/" class="text-indigo-600 hover:underline">&larr; Back to calculator</a>
+      </div>
+    </header>
+    <main class="mx-auto max-w-3xl px-4 py-10">
+      <h1 class="text-3xl font-bold">UGC Portfolio Examples for Beginners: What Brands Actually Pay For</h1>
+      <p class="mt-2 text-sm text-slate-600">Last updated: 2026-11</p>
+
+      <p class="mt-4 leading-relaxed text-slate-600">A UGC portfolio that wins paid work is three to five spec videos in one niche, on a single page that shows a brand exactly what it gets and what it costs. You don't need followers, a brand's permission, or one paid deal to build it. This guide breaks down beginner UGC portfolio examples piece by piece — what brands actually pay for, what each video should prove, and how to price the work once the first reply lands.</p>
+
+      <h2 class="mt-10 text-xl font-bold">Why Brands Pay for UGC (and What They Look At Instead of Followers)</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Brands pay for the video, not your reach. UGC pricing is based on your content and the rights you sell — not your audience size, which is why a finished portfolio outranks a follower count every time.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">The difference matters. Influencer marketing rents an audience: the brand pays because your followers will see the post. UGC is the opposite — the brand buys the video itself, then distributes it through its own channels and paid ads. Your subscriber count never enters the transaction. What enters it is whether your footage looks like content a real customer made: native pacing, a hook in the first two seconds, a product used on camera instead of described.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">Once the brand owns the video, the video becomes an asset. It runs as an ad, gets tested against other hooks, and earns its keep on click-through rate — outcomes your follower count has nothing to do with. That is why a UGC brief asks about your footage, your turnaround, and your licensing terms, and never about your analytics dashboard.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">That flips what a "qualification" is. A brand hiring a UGC creator screens two things — your experience tier and your portfolio. Three to five strong spec videos answer the second question completely, and repeated client work promotes the first. We cover the follower myth in full on <a href="/blog/do-ugc-creators-need-followers" class="text-indigo-600 hover:underline">do UGC creators need followers</a>; the short version: your portfolio is the pitch, and this page is about building one that closes.</p>
+
+      <h2 class="mt-10 text-xl font-bold">What a Beginner UGC Portfolio Must Include</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Three to five finished videos in one vertical niche — that is the entire portfolio. Focused beats long: five videos that prove you own one niche outperform ten scattered across five, because brands buy specialists and pass on generalists.</p>
+      <ul class="mt-3 list-disc space-y-2 pl-6 leading-relaxed text-slate-600">
+        <li><strong>One niche, chosen honestly.</strong> Beauty, fitness, home goods, food, apps — pick the category where you already spend your own money. Spec videos require real products in real hands, and your niche is where your product instincts live.</li>
+        <li><strong>Spec ads — no brand permission needed.</strong> A spec ad is a video you make for a product you bought, on your own initiative, with no brief and no authorization. It is fully legitimate portfolio material, and labeling it "self-initiated" reads as professionalism, not confession. Brands read spec work the way they read a design portfolio: proof you can execute the format without supervision. What it costs you is one product purchase — the cheapest tuition in creator marketing.</li>
+        <li><strong>A range of formats, one per video.</strong> Don't submit five variations of the same unboxing. Each slot should prove a different deliverable: an unboxing, a three-reasons-to-buy hook, a problem–solution piece, a testimonial, a day-in-the-life integration. Range tells a brand it can brief you on more than one job.</li>
+        <li><strong>A quality bar on every clip.</strong> Two-second hook, native pacing, clean light, audible audio. The standard tool is the phone you already own — production polish is not the bar; watchability is. And watchability is checkable: does the hook land before a thumb can swipe, does the audio survive phone speakers, does the product appear in the first few seconds. Review each finished video against those three questions before it earns a portfolio slot.</li>
+      </ul>
+
+      <h2 class="mt-10 text-xl font-bold">UGC Portfolio Page Essentials (With an Example Layout)</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">A portfolio page needs four elements: videos embedded so they play in place, a deliverable label on every video, a rate anchor, and one obvious contact path. Anything a brand has to ask about is a step where it leaves.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">Each video gets a two-line caption underneath it. Line one states the deliverables — what the brand receives. Line two states the brief the video answers. A worked example:</p>
+      <blockquote class="mt-4 rounded-lg bg-slate-100 p-4 font-mono text-sm leading-relaxed text-slate-600">
+        <p><strong>Spec — [Sunset Serum], self-initiated.</strong> Problem–solution angle for dull-skin mornings.</p>
+        <p class="mt-1">Deliverables: 1× 40s edited vertical video + raw clips. Organic use.</p>
+      </blockquote>
+      <p class="mt-3 leading-relaxed text-slate-600">The label does the selling a bio paragraph can't: it shows you already think in deliverables, rights, and scope — the exact vocabulary of the person paying you. A page putting this under all five videos needs almost nothing else. The full structure:</p>
+      <ol class="mt-3 list-decimal space-y-2 pl-6 leading-relaxed text-slate-600">
+        <li><strong>Header</strong> — your name and a one-line niche tagline ("UGC for skincare brands that sell on TikTok").</li>
+        <li><strong>Three to five embedded videos</strong> — each with the two-line caption above.</li>
+        <li><strong>A rate anchor</strong> — one line, quoted from your rate card: "Edited vertical videos from $125." It filters out lowballers before the first call, and it frames the negotiation before it starts: the brand arrives knowing your floor is professional, so the conversation happens inside your band instead of below it.</li>
+        <li><strong>One contact path</strong> — a professional email. One, not four socials.</li>
+      </ol>
+      <p class="mt-3 leading-relaxed text-slate-600">Build it on whatever loads fastest for you — a one-page site builder, a Notion page, anything that plays video without friction. Two rules regardless of tool: your strongest hook-first piece goes first, because most reviewers watch one video, maybe two; and every video must play without a redirect, because a link that opens an app is where attention goes to die. The brand never sees the tool — only the thirty seconds it spends deciding you make content its customers will watch.</p>
+
+      <h2 class="mt-10 text-xl font-bold">Beginner UGC Pricing: The 2026 Rate Table</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Beginners charge $75–250 per video in 2026 community data, based on aggregated public benchmarks — and the band climbs quickly once repeat clients appear. Anchor your rate card inside it, never below it.</p>
+      <div class="mt-4 overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-slate-100">
+              <th class="px-3 py-2 text-left font-semibold">Experience tier</th>
+              <th class="px-3 py-2 text-left font-semibold">Rate per video</th>
+              <th class="px-3 py-2 text-left font-semibold">What it means</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">Beginner</td>
+              <td class="px-3 py-2 font-semibold">$75–250</td>
+              <td class="px-3 py-2 text-slate-600">Under 6 months, a few paid deals</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">Intermediate</td>
+              <td class="px-3 py-2 font-semibold">$150–350</td>
+              <td class="px-3 py-2 text-slate-600">Solid portfolio, repeat clients</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">Advanced</td>
+              <td class="px-3 py-2 font-semibold">$250–600</td>
+              <td class="px-3 py-2 text-slate-600">Proven results, niche authority</td>
+            </tr>
+            <tr class="border-t border-slate-200">
+              <td class="px-3 py-2 font-semibold">Premium</td>
+              <td class="px-3 py-2 font-semibold">$500–1,000+</td>
+              <td class="px-3 py-2 text-slate-600">Case studies with major brands</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 leading-relaxed text-slate-600">Across the whole market, UGC creators charge anywhere from $75 to $1,000+ per video, and most working creators land in the $150–300 range for a standard edited video. The right number for you is a function of content type, usage rights, and experience — run your exact scenario through the free <a href="/" class="text-indigo-600 hover:underline">UGC rate calculator</a> before you quote it. The arithmetic is checkable, too: a $150 base (inside the beginner band) for an edited video, plus 30-day usage rights at the standard +30–50% premium, prices that deliverable at $195–225 — a number a brand can verify line by line.</p>
+
+      <h2 class="mt-10 text-xl font-bold">How to Find Your First Brands</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Most first paid UGC deals come from cold pitching small brands in your niche — not from waiting for a marketplace profile to be discovered. A focused list and a short email beat volume and luck.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">Build a list of twenty to fifty small brands whose products you actually use — small, because at small companies the person reading your email can say yes. Good candidates hide in plain sight: brands in your niche with modest teams, active social accounts but thin content, and products you can talk about with genuine familiarity. Find the partnerships or creators inbox (usually in the Instagram bio or the site's contact page), then send a pitch that does three jobs: one line proving you know their brand, two lines on what you make and why it fits, and one question they can answer in a sentence. The full anatomy — two copy-paste UGC <a href="/blog/ugc-pitch-template" class="text-indigo-600 hover:underline">pitch template</a> examples, subject lines included — is on the pitch guide page.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">Follow up on day 3–4 with something new and on day 8–10 with a polite close, then stop and re-approach next quarter. And price the first deal inside your band, at the middle: a portfolio full of free work is a rate card that says $0, and the first quote is the hardest one to raise.</p>
+      <div class="mt-6 rounded-lg border border-indigo-200 bg-indigo-50 p-6 text-center">
+        <a href="https://ugctoolkit.gumroad.com/l/jlfmgx" rel="noopener" class="inline-block rounded-lg bg-indigo-600 px-6 py-3 font-semibold text-white hover:bg-indigo-700">Land the deal — $9 Pitch Pack</a>
+        <p class="mt-3 text-sm leading-relaxed text-slate-600">13 pitch, follow-up &amp; negotiation templates + a data-backed rate card — $9.</p>
+      </div>
+
+      <h2 class="mt-10 text-xl font-bold">Get the 13 Templates + the Rate Card — $9</h2>
+      <p class="mt-3 leading-relaxed text-slate-600">Everything the last section needs is in the <a href="https://ugctoolkit.gumroad.com/l/jlfmgx" rel="noopener" class="text-indigo-600 hover:underline">UGC Pitch Template Pack</a>: 13 pitch, follow-up &amp; negotiation templates + a data-backed rate card — $9.</p>
+      <p class="mt-3 leading-relaxed text-slate-600">For a beginner, three pieces matter most. The cold pitch section includes a template written specifically for the no-paid-work-yet stage — the exact position of everyone reading this page. The rate card arrives pre-loaded with the same 2026 benchmark ranges as the free calculator, so when a brand asks where your number came from, your answer is a source, not a shrug. And the negotiation scripts mean your first deal gets priced, not extracted — beginners lose the most money in their first ninety days not from rates set too low, but from rights given away for free because nobody said they were separate. Every piece is ready to edit and send today.</p>
+      <div class="mt-6 rounded-lg border border-indigo-200 bg-indigo-50 p-6 text-center">
+        <a href="https://ugctoolkit.gumroad.com/l/jlfmgx" rel="noopener" class="inline-block rounded-lg bg-indigo-600 px-6 py-3 font-semibold text-white hover:bg-indigo-700">Land the deal — $9 Pitch Pack</a>
+        <p class="mt-3 text-sm leading-relaxed text-slate-600">13 pitch, follow-up &amp; negotiation templates + a data-backed rate card — $9.</p>
+        <p class="mt-3 text-sm leading-relaxed text-slate-600">Not ready yet? Price your first quote with the free <a href="/" class="font-semibold text-indigo-600 hover:underline">UGC rate calculator</a>.</p>
+      </div>
+      <p class="mt-4 leading-relaxed text-slate-600">Read next: pricing foundations. The <a href="/blog/how-much-to-charge-ugc" class="text-indigo-600 hover:underline">complete pricing guide</a> covers every rate tier, content multiplier, and usage-rights ladder in one place.</p>
+      <p class="mt-6 text-sm italic leading-relaxed text-slate-500">Figures based on aggregated public benchmarks — platform data, job posts, and published rate sheets — as of 2026-11. Estimates, not financial advice.</p>
+
+      <section id="faq">
+        <h2 class="mt-10 text-xl font-bold">Frequently Asked Questions</h2>
+        <h3 class="mt-6 font-bold">How many videos should a beginner UGC portfolio have?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">Three to five. That is enough to show range — an unboxing, a problem–solution piece, a testimonial — without diluting your niche focus. Five strong videos in one niche outperform ten scattered across five.</p>
+        <h3 class="mt-6 font-bold">Can I build a UGC portfolio without a brand deal or permission?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">Yes. A spec ad is a video you make for a product you bought, on your own initiative, with no brief and no authorization — and it is fully legitimate portfolio material. Labeling spec work "self-initiated" reads as professionalism, not confession.</p>
+        <h3 class="mt-6 font-bold">What should a beginner UGC creator charge per video?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">Beginners charge $75–250 per video in 2026 community data, based on aggregated public benchmarks. Quote inside that band — never below it — and move up as repeat clients stack up. Most working creators land in the $150–300 range for a standard edited video.</p>
+        <h3 class="mt-6 font-bold">What should be on the portfolio page itself?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">Four elements: embedded videos that play in place, a two-line caption per video (deliverables + the brief it answers), a rate anchor such as "edited vertical videos from $125," and one professional contact email. Anything a brand has to ask about is a step where it leaves.</p>
+        <h3 class="mt-6 font-bold">Do I need followers to get UGC brand deals?</h3>
+        <p class="mt-2 leading-relaxed text-slate-600">No. Brands pay for the video, not your reach — UGC pricing is based on your content and the rights you sell, not your audience size. The one exception is posting from your own account, which adds a distribution fee on top of your base rate.</p>
+      </section>
+    </main>
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto max-w-3xl px-4 py-6 text-sm text-slate-600">
+        <!-- 页脚与主站一致：免责声明 + Not financial advice + 联盟披露 + 合规链接组（+ Pricing Guide） -->
+        <p>Estimates based on community data &mdash; verify against your niche. Not financial advice.</p>
+        <p class="mt-2">Some links on this site may be affiliate links. If you buy through them, we may earn a commission at no extra cost to you.</p>
+        <nav class="mt-3 flex flex-wrap gap-4" aria-label="Legal">
+          <a href="/" class="text-indigo-600 hover:underline">Calculator</a>
+          <a href="/blog/how-much-to-charge-ugc" class="text-indigo-600 hover:underline">Pricing Guide</a>
+          <a href="/privacy" class="text-indigo-600 hover:underline">Privacy Policy</a>
+          <a href="/terms" class="text-indigo-600 hover:underline">Terms of Service</a>
+          <a href="/privacy#ccpa" class="text-indigo-600 hover:underline">Do Not Sell or Share My Personal Information</a>
+        </nav>
+        <p class="mt-3">&copy; 2026 UGC Toolkit</p>
+      </div>
+    </footer>
+  </body>
+</html>
